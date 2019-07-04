@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logoofficialhunter_white"
+        android:layout_toRightOf="@id/guideline_right"
+        android:layout_toStartOf="@id/guideline_left"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/guideline_right"
+        android:layout_toStartOf="@id/guideline_left"
+        android:layout_below="@id/icon">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_mediumitalic"
+                android:text="@string/petunjukotp"
+                android:textColor="@color/putih"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/previewemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/putih" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="40dp">
+
+            <EditText
+                android:id="@+id/otpEdit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/putih"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textColor="@color/putih"
+                android:textSize="24sp" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="2dp"
+                android:layout_height="0dp" />
+
+            <EditText
+                android:id="@+id/otpEdit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/putih"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textColor="@color/putih"
+                android:textSize="24sp" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="2dp"
+                android:layout_height="0dp" />
+
+            <EditText
+                android:id="@+id/otpEdit3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/putih"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textColor="@color/putih"
+                android:textSize="24sp" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="2dp"
+                android:layout_height="0dp" />
+
+            <EditText
+                android:id="@+id/otpEdit4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/putih"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textColor="@color/putih"
+                android:textSize="24sp" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="2dp"
+                android:layout_height="0dp" />
+
+            <EditText
+                android:id="@+id/otpEdit5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/putih"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textColor="@color/putih"
+                android:textSize="24sp" />
+
+
+            <androidx.legacy.widget.Space
+                android:layout_width="2dp"
+                android:layout_height="0dp" />
+
+            <EditText
+                android:id="@+id/otpEdit6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/putih"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_bold"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textColor="@color/putih"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/nextOtp"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/login_button"
+                android:fontFamily="@font/montserrat_semibold"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="biodata"
+                android:padding="10dp"
+                android:text="@string/berikutnya"
+                android:textAllCaps="false"
+                android:textColor="@color/putih"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+
+            <TextView
+                android:id="@+id/resendOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/kirimulangkode"
+                android:textAlignment="center"
+                android:textColor="@color/biruterang"
+                android:textSize="18sp"
+                android:clickable="true"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ly_loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#cc1c1c1c"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/iv_progress_image"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/img_anim_loading"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

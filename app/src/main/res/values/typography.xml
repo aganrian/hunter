@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Small" parent="android:TextAppearance">
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="TextAppearance.Small.Primary" parent="TextAppearance.Small">
+        <!--<item name="android:textColor">@color/colorPrimary</item>-->
+    </style>
+
+    <style name="TextAppearance.Small.Accent" parent="TextAppearance.Small">
+        <!--<item name="android:textColor">@color/colorAccent</item>-->
+    </style>
+
+    <style name="TextAppearance.Medium" parent="android:TextAppearance">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+
+</resources>

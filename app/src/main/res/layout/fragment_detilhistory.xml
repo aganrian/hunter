@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_header"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                    <ImageButton
+                        android:id="@+id/ibBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_normal"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/app_name"
+                        android:src="?attr/homeAsUpIndicator" />
+
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/detils"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+        <RelativeLayout
+            android:layout_below="@id/appbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_margin="@dimen/_20sdp"
+                android:id="@+id/lyImagePlat"
+                android:background="@drawable/border_rounded_white_transparant"
+                >
+                <ImageView
+                    android:id="@+id/imageplat"
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_photo_camera_black_200dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlUbahData"
+                android:visibility="gone"
+                android:layout_below="@id/lyImagePlat"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewUbahData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/ketikNoPolisi"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_below="@id/textViewUbahData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/gagalMembacaFotoContoh"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"/>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edNoPolisiManual"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/border_rounded_blue_transparant"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:hint="@string/gagalMembacaFotoContoh"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/_10sdp"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_below="@id/edNoPolisiManual">
+
+                    <Button
+                        android:id="@+id/btnBatalManual"
+                        android:paddingLeft="@dimen/_35sdp"
+                        android:paddingRight="@dimen/_35sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/batal"
+                        android:textStyle="bold"
+                        android:textColor="@color/birugelap"
+                        android:gravity="center"
+                        android:background="@drawable/border_rounded_blue_transparant"
+                        />
+
+                    <Button
+                        android:id="@+id/btnKirimManual"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kirim"
+                        android:paddingLeft="@dimen/_35sdp"
+                        android:paddingRight="@dimen/_35sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite"
+                        android:gravity="center"
+                        android:background="@drawable/border_rounded_blue"
+                        />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:id="@+id/rlMainUtama"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/lyImagePlat"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/lyImagePlat">
+
+                    <TextView
+                        android:id="@+id/txtStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="Data DItemukan"
+                        android:textSize="@dimen/_18sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/colorBlack"
+                        android:gravity="center"/>
+
+                    <View android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorGrey"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/labelNomorPolisi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/nomorPolisiLabel"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/valueNomorPolisi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:textColor="@color/colorPrimary"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+
+
+
+                    </RelativeLayout>
+
+                    <View android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorGrey"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/labelJenisKendaraan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/jenisKendaraanLabel"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/valueJenisKendaraan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="-"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:textColor="@color/colorPrimary"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+
+
+
+                    </RelativeLayout>
+
+                    <View android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorGrey"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/merkKendaraanLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/merkLabel"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/valueKendaraanLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:text="-"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:textColor="@color/colorPrimary"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <View android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorGrey"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/labelLeasing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/leaseingLabel"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/valueleasing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="-"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:textColor="@color/colorPrimary"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <View android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorGrey"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/labelDebitur"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/debiturNameLabel"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/valueDebitur"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:text="-"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:textColor="@color/colorPrimary"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+
+                    <View android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorGrey"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/labelStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/statusLabel"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/valueStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="-"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:textColor="@color/red"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <View android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorGrey"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tglLaporanLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/tanggal_laporan"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/tglLaporanValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="-"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <View android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorGrey"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/labelStatusLaporan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/status_laporan"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/valueStatusLaporan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="-"
+                                android:textSize="@dimen/_12sdp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:textColor="@color/colorBlack"
+                                android:gravity="center"/>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <View android:layout_height="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorGrey"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/btnAjuan"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:background="@drawable/border_rounded_blue">
+                        <TextView
+                            android:id="@+id/txtButtonAjuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textColor="@color/colorWhite"
+                            android:layout_marginBottom="5dp"
+                            android:text="Ajukan Perpanjangan Penanganan" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ly_loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cc1c1c1c"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/iv_progress_image"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/img_anim_loading"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

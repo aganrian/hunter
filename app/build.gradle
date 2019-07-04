@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion deps.version.compileSdk
+    defaultConfig {
+        applicationId "com.example.hunter"
+        minSdkVersion deps.version.minSdk
+        targetSdkVersion deps.version.targetSdk
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "API_URL", API_URL)
+        buildConfigField("String", "API_URL_IMAGE_PROFILE", API_URL_IMAGE_PROFILE)
+        buildConfigField("String", "API_URL_IMAGE_PRODUCT", API_URL_IMAGE_PRODUCT)
+        buildConfigField("String", "API_URL_IMAGE_PLAT", API_URL_IMAGE_PLAT)
+    }
+
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    variantFilter { variant ->
+        def name = variant.flavors*.name
+        if (name.contains("stag") && variant.buildType.name == "release") {
+            setIgnore(true)
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation support.values()
+
+    implementation butterknife.core
+    annotationProcessor butterknife.compiler
+
+    implementation glide.runtime
+    annotationProcessor glide.compiler
+
+    implementation network.values()
+    implementation rx.values()
+
+    implementation dagger.core
+    annotationProcessor dagger.compiler
+    implementation dagger.android
+    implementation dagger.support
+    annotationProcessor dagger.processor
+
+    implementation room.runtime
+    annotationProcessor room.compiler
+    implementation room.rx
+
+    implementation firebase.values()
+    implementation other.values()
+    implementation googleservice.values()
+
+    testImplementation unitTest.values()
+
+    androidTestImplementation uiTest.values()
+}
+
+apply plugin: 'com.google.gms.google-services'

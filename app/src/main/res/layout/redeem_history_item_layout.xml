@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:contentPadding="5dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/lyBottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/lyBottom"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_width="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/titleDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/lyBottom"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#444"
+                    android:textSize="@dimen/font_normal"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/titleProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#444"
+                        android:textSize="@dimen/font_normal"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/titlePoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/titleProduct"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/colorRedTranparant"
+                        android:layout_marginBottom="5dp"
+                        />
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/titleStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#444"
+                        android:layout_marginBottom="5dp"
+                         />
+
+                    <TextView
+                        android:id="@+id/titleResi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/titleStatus"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/colorRedTranparant"
+                        android:layout_marginBottom="5dp"
+                         />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

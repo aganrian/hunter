@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlToolbarTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivImage"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:src="@drawable/ic_person"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/putih"
+                android:layout_gravity="center"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_below="@id/rlToolbarTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/namaLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/menuProfileText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/namalengkap"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:focusableInTouchMode="true"
+                    android:focusable="true"
+                    android:enabled="true"
+                    android:hint="@string/namalengkap"
+                    android:id="@+id/namaEdittext"
+                    android:cursorVisible="true"
+                    android:textColor="@color/colorGreen"
+                    android:textColorHint="@color/colorGreen"
+                    android:textSize="@dimen/_10ssp"
+                    app:backgroundTint="@color/putih" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noTelpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:layout_below="@id/namaLinear"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/labelNoTelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/nomor_telepon"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:focusableInTouchMode="true"
+                    android:focusable="true"
+                    android:enabled="true"
+                    android:hint="@string/nomor_telepon"
+                    android:id="@+id/noTelpEdittext"
+                    android:cursorVisible="true"
+                    android:textColor="@color/colorGreen"
+                    android:textColorHint="@color/colorGreen"
+                    android:textSize="@dimen/_10ssp"
+                    app:backgroundTint="@color/putih" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tglLahirLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:layout_below="@id/noTelpLayout"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/labelTglLahir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/tanggalLahir"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:focusableInTouchMode="true"
+                    android:focusable="true"
+                    android:enabled="true"
+                    android:hint="@string/tanggalLahir"
+                    android:id="@+id/tglLahirEdittext"
+                    android:cursorVisible="false"
+                    android:textColor="@color/colorGreen"
+                    android:textColorHint="@color/colorGreen"
+                    android:textSize="@dimen/_10ssp"
+                    app:backgroundTint="@color/putih" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/jenisKelaminLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:layout_below="@id/tglLahirLayout"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/labelJenisKelamin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/jenisKelamin"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/colorBlack"/>
+
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:id="@+id/lyLakiLaki"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <net.igenius.customcheckbox.CustomCheckBox
+                            android:id="@+id/lakiChoose"
+                            android:layout_width="@dimen/_22sdp"
+                            android:layout_height="@dimen/_22sdp"
+                            app:color_checked="@color/colorPrimary"
+                            app:color_tick="@android:color/white"
+                            app:color_unchecked="@color/colorAccent"
+                            app:color_unchecked_stroke="@color/colorAccent"
+                            app:small_tick="true" />
+
+                        <TextView
+                            android:id="@+id/textSisaCuti"
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:textColor="@color/colorGreen"
+                            android:text="@string/laki_laki"
+                            android:textSize="@dimen/_14ssp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyPerempuan"
+                        android:layout_weight="0.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <net.igenius.customcheckbox.CustomCheckBox
+                            android:id="@+id/wanitaChoose"
+                            android:layout_width="@dimen/_22sdp"
+                            android:layout_height="@dimen/_22sdp"
+                            app:color_checked="@color/colorPrimary"
+                            app:color_tick="@android:color/white"
+                            app:color_unchecked="@color/colorAccent"
+                            app:color_unchecked_stroke="@color/colorAccent"
+                            app:small_tick="true" />
+
+                        <TextView
+                            android:id="@+id/textSakit"
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:textColor="@color/colorGreen"
+                            android:text="@string/perempuan"
+                            android:textSize="@dimen/_14ssp"
+                            />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/emailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:layout_below="@id/jenisKelaminLayout"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/emailLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/email"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:enabled="false"
+                    android:hint="@string/email"
+                    android:id="@+id/emailEdittext"
+                    android:cursorVisible="false"
+                    android:textColor="@color/colorGreen"
+                    android:textColorHint="@color/colorGreen"
+                    android:textSize="@dimen/_10ssp"
+                    app:backgroundTint="@color/putih" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ktpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:layout_below="@id/emailLayout"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/labelNoKtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/noKtp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:focusableInTouchMode="true"
+                    android:focusable="true"
+                    android:enabled="true"
+                    android:hint="@string/noKtp"
+                    android:id="@+id/ktpEdittext"
+                    android:cursorVisible="true"
+                    android:textColor="@color/colorGreen"
+                    android:textColorHint="@color/colorGreen"
+                    android:textSize="@dimen/_10ssp"
+                    app:backgroundTint="@color/putih" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ktpImageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:layout_below="@id/ktpLayout"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/labelImageKtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/uploadKtp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textSize="@dimen/_10ssp"
+                    android:textColor="@color/colorBlack"/>
+
+                <ImageView
+                    android:id="@+id/ivKtp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_ktp"
+                    />
+
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyButtonOcr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/ktpImageLayout"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp">
+
+                <Button
+                    android:id="@+id/btnSimpan"
+                    android:paddingLeft="@dimen/_35sdp"
+                    android:paddingRight="@dimen/_35sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/simpan"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/border_rounded_blue"
+                    />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/ly_loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cc1c1c1c"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/iv_progress_image"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/img_anim_loading"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

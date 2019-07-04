@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_header"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/kirimlaporan"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/appbarlayout"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_margin="@dimen/_20sdp"
+                android:id="@+id/lyImagePlat"
+                android:background="@drawable/border_rounded_white_transparant"
+                >
+                <ImageView
+                    android:id="@+id/imageplat"
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_photo_camera_black_200dp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/lyImagePlat">
+
+                <RelativeLayout
+                    android:id="@+id/rlGagal"
+                    android:visibility="gone"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="@string/gagalMembacaFoto"
+                        android:textColor="@color/red"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_below="@id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_10sdp"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/gagalMembacaFotoContoh"
+                        android:textColor="@color/colorBlack"
+                        android:gravity="center"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edNoPolisiManual"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/border_rounded_blue_transparant"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="@string/gagalMembacaFotoContoh"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/_10sdp"
+                        android:textSize="18sp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lyButtonOcr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp">
+
+                    <Button
+                        android:id="@+id/btnBatal"
+                        android:paddingLeft="@dimen/_35sdp"
+                        android:paddingRight="@dimen/_35sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/batal"
+                        android:textStyle="bold"
+                        android:textColor="@color/birugelap"
+                        android:gravity="center"
+                        android:background="@drawable/border_rounded_blue_transparant"
+                        />
+
+                    <Button
+                        android:id="@+id/btnKirim"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kirim"
+                        android:paddingLeft="@dimen/_35sdp"
+                        android:paddingRight="@dimen/_35sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite"
+                        android:gravity="center"
+                        android:background="@drawable/border_rounded_blue"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lyButtonManual"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp">
+
+                    <Button
+                        android:id="@+id/btnBatalManual"
+                        android:paddingLeft="@dimen/_35sdp"
+                        android:paddingRight="@dimen/_35sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/batal"
+                        android:textStyle="bold"
+                        android:textColor="@color/birugelap"
+                        android:gravity="center"
+                        android:background="@drawable/border_rounded_blue_transparant"
+                        />
+
+                    <Button
+                        android:id="@+id/btnKirimManual"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kirim"
+                        android:paddingLeft="@dimen/_35sdp"
+                        android:paddingRight="@dimen/_35sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite"
+                        android:gravity="center"
+                        android:background="@drawable/border_rounded_blue"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/ly_loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cc1c1c1c"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/iv_progress_image"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/img_anim_loading"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

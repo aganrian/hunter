@@ -1,0 +1,137 @@
+<resources>
+    <string name="app_name">Hunter</string>
+    <string name="aboutVersion">Versi 1.0.0</string>
+    <string name="aboutCopyright">©2019 Presented by Hunter</string>
+    <string name="buildName">Hunter</string>
+    <string name="message_permission">Application need some permission to access features</string>
+
+    <string name="login_label">MASUK</string>
+    <string name="submit_label">SIMPAN</string>
+    <string name="close_label">CLOSE</string>
+    <string name="on_label">NYALAKAN</string>
+
+
+    <string name="ok_label">OK</string>
+
+    <!--error message-->
+    <string name="message_error_get_data">Mohon maaf gagal menggambil data</string>
+    <string name="message_connection_lost">Mohon maaf koneksi Anda terganggu</string>
+    <string name="err_message_emailnotvalid">Mohon maaf Email Anda tidak valid</string>
+    <string name="err_message_nohandphone">Mohon masukan email Anda yang terdaftar</string>
+    <string name="err_message_password">Mohon password Anda yang terdaftar</string>
+    <string name="err_phone_notsame">Mohon gunakan no handphone yang sama, Jika berbeda silahkan uninstall dan install kembali.</string>
+
+    <string name="err_message_cannot_getGaji">Mohon maaf gagal mengambil data penghasilan.</string>
+    <string name="err_message_cannot_getKehadiranHariIni">Mohon maaf gagal mengambil data kehadiran hari ini.</string>
+    <string name="err_message_cannot_getKehadiranHariBulan">Mohon maaf gagal mengambil data kehadiran bulan ini.</string>
+    <string name="err_message_cannot_getPenilaian">Mohon maaf gagal mengambil data penilaian bulan lalu.</string>
+
+    <string name="err_message_fill_otp">Mohon Lengkapi Otp Anda</string>
+
+    <string name="err_message_empty_fill">Silakan lengkapi form Anda. Terima kasih</string>
+    <string name="doubleBackPressConfirmation">Silahkan tekan 2 x untuk keluar. Terima kasih</string>
+    <string name="err_message_password_not_same">Maaf password tidak sama. Silahkan ulangi kembali.</string>
+    <string name="err_gps">Mohon menyalakan fungsi GPS untuk melakukan Absen. Terima kasih</string>
+    <string name="error_get_lat_long">Mohon maaf gagal mendapatkan lat long. Silakan ulangi ambil foto. Terima kasih</string>
+    <string name="err_endDate">Mohon maaf tanggal akhir harus lebih besar dari tanggal awal.</string>
+    <string name="err_startDate">Mohon maaf tanggal awal harus lebih kecil dari tanggal akhir.</string>
+    <string name="err_sakit_surat">Mohon maaf jika sakit harus melampirkan surat sakit.</string>
+    <string name="err_empty_tglawal">Silakan isi tanggal awal.</string>
+    <string name="err_empty_tglakhir">Silakan isi tanggal akhhir.</string>
+
+    <string name="err_edAlsan_cuti">Mohon isi alasan cuti Anda</string>
+    <string name="err_edAlsan_sakit">Mohon isi keterangan Sakit Anda</string>
+
+    <string name="err_edsubmit_loc"> Mohon maaf data lokasi gagal di ambil silahkan ulangi kembali pengambilan foto</string>
+    <string name="err_edsubmit_img"> Mohon maaf gambar gagal di ambil silahkan ulangi kembali pengambilan foto</string>
+
+
+
+    <!--hunter-->
+    <!--Login strings-->
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="alamatemail">E-mail</string>
+    <string name="noKtp">Nomor KTP</string>
+    <string name="uploadKtp">Upload KTP</string>
+    <string name="uploadProfile">Upload Profile</string>
+    <string name="katasandi">Password</string>
+    <string name="katasandilagi">Confirm Password</string>
+    <string name="ingatsaya">Ingat saya !</string>
+    <string name="lupakatasandi">Lupa password ?</string>
+    <string name="daftar">Daftar</string>
+    <string name="daftarsignup">Daftar / Sign Up</string>
+    <string name="cekemail">Cek Email</string>
+    <string name="namalengkap">Nama</string>
+    <string name="jenisKelamin">Jenis Kelamin</string>
+    <string name="perbaruikatasandi">Perbarui Kata Sandi</string>
+    <string name="keteranganlogin">Masukkan E-mail &amp; Password yang terdaftar</string>
+    <string name="persetujuan">Dengan masuk dan mendaftar pada aplikasi ini, maka Anda setuju dengan <b>Aturan Pengguna</b> dan <b>Kebijakan Privasi</b> yang ditetapkan</string>
+    <string name="keterangandaftar">Lengkapi form dibawah ini untuk mendaftar</string>
+    <string name="keteranganforgot">Masukkan E-mail yang terdaftar untuk memperbaharui <i>password</i></string>
+    <string name="perbaruipassword">Perbarui Password</string>
+    <string name="petunjukperbaruanpassword">Instruksi dalam melakukan perbaruan <i>password</i> akan dikirim ke <i>e-mail</i> terdaftar yang dituju</string>
+    <string name="petunjukotp">Masukan kode yang terkirim ke <i>e-mail</i></string>
+    <string name="kirimulangkode">Minta kode baru</string>
+    <string name="berikutnya">Berikutnya</string>
+    <string name="selanjutnya">Selanjutnya</string>
+    <string name="kirimlaporan">Kirim Laporan</string>
+    <string name="batal">BATAL</string>
+    <string name="kirim">KIRIM</string>
+    <string name="redeem_point">Redeem Point</string>
+    <string name="tukarkan">Tukarkan poinmu dengan berbagai pilihan item</string>
+    <string name="toast_unexpected_error">Unexpected error</string>
+    <string name="message">Message</string>
+    <string name="petunjukforgot">Masukan Email yang terdaftar</string>
+    <string name="fillPassword">Silahkan masukan kata sandi Anda</string>
+    <string name="ConfirmPassword">Silahkan masukan Konfirmasi kata sandi Anda</string>
+    <string name="ConfirmPasswordSame">Maaf kata Sandi tidak sama</string>
+    <string name="ganti">GANTI</string>
+    <string name="filenotinserted">Silahkan masukan gambar plat yang ingin di laporkan</string>
+    <string name="gagalMembacaFoto">Gagal membaca foto, mohon ketik manual</string>
+    <string name="gagalMembacaFotoContoh">Contoh:B1234XYZ</string>
+    <string name="ingin">Ingin menangani kendaraan ini</string>
+    <string name="ya">YA</string>
+    <string name="tidak">TIDAK</string>
+    <string name="ubahData">Ubah Data</string>
+    <string name="nomorPolisiLabel">Nomor Polisi</string>
+    <string name="jenisKendaraanLabel">Jenis Kendaraan</string>
+    <string name="merkLabel">Merek dan Tahun kendaraan</string>
+    <string name="leaseingLabel">Perusahaan Leasing</string>
+    <string name="debiturNameLabel">Nama Debitur</string>
+    <string name="statusLabel">Status</string>
+    <string name="notFoundData">Data Tidak Ditemukan</string>
+    <string name="foundData">Data ditemukan</string>
+    <string name="alreadyHandled">Saat ini kendaraan sedang di tangani oleh member lain</string>
+    <string name="alreadyReport">Anda sudah pernah mengirimkan laporan ini</string>
+    <string name="laki_laki">Laki Laki</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="ketikNoPolisi">Ketik nomor Polisi</string>
+    <string name="redeem">REDEEM</string>
+    <string name="pointLabel">point</string>
+    <string name="tanggal_laporan">Tanggal Laporan</string>
+    <string name="detils">Details</string>
+    <string name="fillNopolisiManual">Masukan no polisi yang ingin Anda laporkan</string>
+    <string name="profile">Profile</string>
+    <string name="alamat">Alamat</string>
+    <string name="mitra">Mitra</string>
+    <string name="aturan_pengguna">Aturan Pengguna</string>
+    <string name="keluar">Keluar</string>
+    <string name="tanggalLahir">Tanggal Lahir</string>
+    <string name="search_no">Cari Nomor Kendaraan</string>
+    <string name="search_product">Cari Produk</string>
+    <string name="not_point_enough">Poin tidak mencukup</string>
+    <string name="wantRedeem">Anda ingin menukar Poin?</string>
+    <string name="titleMitraResmi">Anda belum terdaftar menjadi Mitra Resmi</string>
+    <string name="contentMitraResmi">Untuk dapat menangani kendaraan ini. Anda harus terdaftar sebagai mitra resmi</string>
+    <string name="footerMitraResmi">Anda ingin menjadi mitra resmi Kami?</string>
+    <string name="status_laporan">Status Laporan</string>
+    <string name="monthOverdue">Months Overdue</string>
+    <string name="mobil">Mobil</string>
+    <string name="suratPenunjukan">Surat Penunjukan Penanganan</string>
+    <string name="ajukanPerpanjangan">Ajukan Perpanjangan Penanganan</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="email">Email</string>
+    <string name="simpan">Simpan</string>
+    <string name="success_extend">Permintaan akan diproses minimal 3 hari kerja</string>
+</resources>

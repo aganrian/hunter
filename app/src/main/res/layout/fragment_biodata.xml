@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:background="@drawable/bg_login">
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/mainlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/logoofficialhunter_white"
+                android:layout_gravity="center"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_mediumitalic"
+                        android:text="@string/keterangandaftar"
+                        android:textColor="@color/putih"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_input_nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        android:theme="@style/StyledEditText">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:hint="@string/namalengkap"
+                            android:id="@+id/biodataNama"
+                            android:inputType="text"
+                            android:textColor="@color/putih"
+                            android:textColorHint="@color/putih"
+                            android:textSize="18sp"
+                            app:backgroundTint="@color/putih" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:focusableInTouchMode="false"
+                        android:focusable="false"
+                        android:hint="@string/tanggalLahir"
+                        android:id="@+id/biodataTanggalLahir"
+                        android:cursorVisible="false"
+                        android:textColor="@color/putih"
+                        android:textColorHint="@color/putih"
+                        android:textSize="18sp"
+                        app:backgroundTint="@color/putih" />
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:focusableInTouchMode="true"
+                        android:focusable="true"
+                        android:hint="@string/jenisKelamin"
+                        android:id="@+id/biodataJenisKelamin"
+                        android:cursorVisible="false"
+                        android:textColor="@color/putih"
+                        android:textColorHint="@color/putih"
+                        android:textSize="18sp"
+                        app:backgroundTint="@color/putih" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyLakiLaki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <net.igenius.customcheckbox.CustomCheckBox
+                        android:id="@+id/lakiChoose"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        app:color_checked="@color/colorPrimary"
+                        app:color_tick="@android:color/white"
+                        app:color_unchecked="@color/colorAccent"
+                        app:color_unchecked_stroke="@color/colorAccent"
+                        app:small_tick="true" />
+
+                    <TextView
+                        android:id="@+id/textSisaCuti"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/laki_laki"
+                        android:textSize="@dimen/_14ssp"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lyPerempuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <net.igenius.customcheckbox.CustomCheckBox
+                        android:id="@+id/wanitaChoose"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        app:color_checked="@color/colorPrimary"
+                        app:color_tick="@android:color/white"
+                        app:color_unchecked="@color/colorAccent"
+                        app:color_unchecked_stroke="@color/colorAccent"
+                        app:small_tick="true" />
+
+                    <TextView
+                        android:id="@+id/textSakit"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/perempuan"
+                        android:textSize="@dimen/_14ssp"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/putih"
+                        android:theme="@style/StyledEditText">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:id="@+id/biodataEmail"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:hint="@string/alamatemail"
+                            android:inputType="text"
+                            android:textColor="@color/putih"
+                            android:textSize="18sp"
+                            app:backgroundTint="@color/putih" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_no_ktp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/putih"
+                        android:theme="@style/StyledEditText">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:hint="@string/noKtp"
+                            android:id="@+id/biodataKtp"
+                            android:inputType="number"
+                            android:textColor="@color/putih"
+                            android:textSize="18sp"
+                            app:backgroundTint="@color/putih" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/putih"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/uploadKtp"/>
+
+                    <ImageView
+                        android:id="@+id/ivKtp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_ktp"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/putih"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="@string/uploadProfile"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:src="@drawable/ic_person"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:civ_border_width="2dp"
+                        android:layout_centerHorizontal="true"
+                        app:civ_border_color="@color/putih"
+                        android:layout_gravity="center"/>
+
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/nextButton"
+                        android:layout_width="300dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/login_button"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="10dp"
+                        android:text="@string/selanjutnya"
+                        android:textAllCaps="false"
+                        android:textColor="@color/putih"
+                        android:textSize="16dp"
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ly_loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#cc1c1c1c"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/iv_progress_image"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_170sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_anim_loading"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+</ScrollView>

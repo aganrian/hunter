@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1abc9c</color>
+    <color name="colorPrimaryDark">#16a085</color>
+    <color name="colorAccent">#34495e</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGrey">#b6b6b6</color>
+    <color name="colorBlack">#000000</color>
+    <color name="pin_normal">#6B767E</color>
+    <color name="bg_text_layout">#dcf1f9</color>
+    <color name="red">#ef0d0d</color>
+    <color name="colorGreen">#009d0e</color>
+    <color name="colorBlue">#2b78e4</color>
+    <color name="colorBlueTranparant">#802b78e4</color>
+    <color name="colorRedTranparant">#80ef0d0d</color>
+    <color name="colorGreyBotton">#b8bcc1</color>
+    <color name="colorBlackShadow">#90000000</color>
+    <color name="colorTranparant">#80ffffff</color>
+    <color name="colorGreyWarm">#888888</color>
+    <color name="colorGreenCalm">#90e67d</color>
+    <color name="accent">#FF4081</color>
+    <color name="darkGrey">#cacaca</color>
+    <color name="darkGreen">#0d5a12</color>
+    <color name="backNavBottom">#e39c1c</color>
+    <color name="darkGreyGrey">#575757</color>
+    <color name="yellow">#9B6807</color>
+    <color name="tab_disable">#979797</color>
+    <color name="tab_enable">#FFFFFF</color>
+    <color name="tab_checked">#F3CD70</color>
+    <color name="tab_unchecked">#FFFFFF</color>
+
+    <!-- hunter palettes. -->
+    <color name="hitam">#090909</color>
+    <color name="merah">#E63946</color>
+    <color name="putih">#F1FAEE</color>
+    <color name="biruterang">#A8DADC</color>
+    <color name="biru">#457B9D</color>
+    <color name="birugelap">#1D3557</color>
+    <color name="orange">#F05E23</color>
+
+    <color name="dark_blue">#3023AE</color>
+    <color name="purple">#C86DD7</color>
+
+    <color name="login_form_details">#ccffffff</color>
+    <color name="login_form_details_light">#1affffff</color>
+    <color name="login_form_details_medium">#66ffffff</color>
+
+    <color name="bg_background_color">#008489</color>
+</resources>
