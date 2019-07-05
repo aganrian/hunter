@@ -166,6 +166,11 @@ public class BiodataPresenter implements BiodataContract.Presenter {
                     userEntity.setKecamatan(reponse.getData().getKecamatan());
                     userEntity.setKelurahan(reponse.getData().getKelurahan());
                     userEntity.setKodepos(reponse.getData().getKodepos());
+                    userEntity.setKabupaten_id(reponse.getData().getKabupaten_id());
+                    userEntity.setKecamatan_id(reponse.getData().getKecamatan_id());
+                    userEntity.setProvinsi_id(reponse.getData().getProvinsi_id());
+                    userEntity.setKelurahan_id(reponse.getData().getKelurahan_id());
+                    userEntity.setKodepos_id(reponse.getData().getKodepos_id());
 
 
                     preferenceRepo.setUserLogged(true);

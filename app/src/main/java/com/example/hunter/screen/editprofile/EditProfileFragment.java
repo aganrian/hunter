@@ -171,7 +171,7 @@ public class EditProfileFragment extends BaseFragment implements EditProfileCont
             @Override
             public void run() {
                 ImageUtils.displayImageFromUrl(parentActivity(), imageProfileView,
-                        BuildConfig.API_URL_IMAGE_PROFILE.concat(userEntity.getPicture()),null,R.drawable.ic_person);
+                        BuildConfig.API_URL_IMAGE_PROFILE.concat(userEntity.getPicture()==null?"":userEntity.getPicture()),null,R.drawable.ic_person);
             }
         });
 
@@ -179,17 +179,24 @@ public class EditProfileFragment extends BaseFragment implements EditProfileCont
             @Override
             public void run() {
                 ImageUtils.displayImageFromUrl(parentActivity(),ivKtp,
-                        BuildConfig.API_URL_IMAGE_PROFILE.concat(userEntity.getKtp_picture()),null,R.drawable.ic_person);
+                        BuildConfig.API_URL_IMAGE_PROFILE.concat(userEntity.getKtp_picture()==null?"":userEntity.getKtp_picture()),null,R.drawable.ic_person);
             }
         });
 
-        if(userEntity.getGender().equalsIgnoreCase(S.LAKI_LAKI)){
+
+        if(userEntity.getGender()==null){
             wanitaChoose.setChecked(false);
             lakiChoose.setChecked(true);
-        }else {
-            wanitaChoose.setChecked(true);
-            lakiChoose.setChecked(false);
+        }else{
+            if(userEntity.getGender().equalsIgnoreCase(S.LAKI_LAKI)){
+                wanitaChoose.setChecked(false);
+                lakiChoose.setChecked(true);
+            }else {
+                wanitaChoose.setChecked(true);
+                lakiChoose.setChecked(false);
+            }
         }
+
 
     }
 

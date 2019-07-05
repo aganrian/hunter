@@ -87,6 +87,60 @@ public class UserEntity {
     @ColumnInfo (name = "kodepos")
     private String kodepos;
 
+    @ColumnInfo (name = "provinsi_id")
+    private Integer provinsi_id;
+
+    @ColumnInfo (name = "kabupaten_id")
+    private Integer kabupaten_id;
+
+    @ColumnInfo (name = "kecamatan_id")
+    private Integer kecamatan_id;
+
+    @ColumnInfo (name = "kelurahan_id")
+    private Integer kelurahan_id;
+
+    @ColumnInfo (name = "kodepos_id")
+    private Integer kodepos_id;
+
+    public Integer getProvinsi_id() {
+        return provinsi_id;
+    }
+
+    public void setProvinsi_id(Integer provinsi_id) {
+        this.provinsi_id = provinsi_id;
+    }
+
+    public Integer getKabupaten_id() {
+        return kabupaten_id;
+    }
+
+    public void setKabupaten_id(Integer kabupaten_id) {
+        this.kabupaten_id = kabupaten_id;
+    }
+
+    public Integer getKecamatan_id() {
+        return kecamatan_id;
+    }
+
+    public void setKecamatan_id(Integer kecamatan_id) {
+        this.kecamatan_id = kecamatan_id;
+    }
+
+    public Integer getKelurahan_id() {
+        return kelurahan_id;
+    }
+
+    public void setKelurahan_id(Integer kelurahan_id) {
+        this.kelurahan_id = kelurahan_id;
+    }
+
+    public Integer getKodepos_id() {
+        return kodepos_id;
+    }
+
+    public void setKodepos_id(Integer kodepos_id) {
+        this.kodepos_id = kodepos_id;
+    }
 
     public String getProvinsi() {
         return provinsi;

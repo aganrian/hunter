@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_header"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                    <ImageButton
+                        android:id="@+id/ibBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_normal"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/app_name"
+                        android:src="?attr/homeAsUpIndicator" />
+
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/alamat"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+            android:layout_below="@id/appbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/lyProvince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/labelProvince"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/provinsi"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/colorBlack"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:focusableInTouchMode="false"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+                        android:hint="@string/provinsi"
+                        android:id="@+id/valueProvince"
+                        android:textColor="@color/colorGreen"
+                        android:textColorHint="@color/colorGreen"
+                        android:textSize="@dimen/_10ssp"
+                        app:backgroundTint="@color/putih" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyKabupaten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyProvince"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/labelKabupaten"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/kabupatenkota"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/colorBlack"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:focusableInTouchMode="false"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+                        android:hint="@string/kabupatenkota"
+                        android:id="@+id/valueKabupaten"
+                        android:textColor="@color/colorGreen"
+                        android:textColorHint="@color/colorGreen"
+                        android:textSize="@dimen/_10ssp"
+                        app:backgroundTint="@color/putih" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyKecamatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyKabupaten"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/labelKecapatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/kecamatan"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/colorBlack"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:focusableInTouchMode="false"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+                        android:hint="@string/kecamatan"
+                        android:id="@+id/valueKecamatan"
+                        android:textColor="@color/colorGreen"
+                        android:textColorHint="@color/colorGreen"
+                        android:textSize="@dimen/_10ssp"
+                        app:backgroundTint="@color/putih" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyKelurahan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyKecamatan"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/labelKelurahan"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/kelurahan"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/colorBlack"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:focusableInTouchMode="false"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+                        android:hint="@string/kelurahan"
+                        android:id="@+id/valueKelurahan"
+                        android:textColor="@color/colorGreen"
+                        android:textColorHint="@color/colorGreen"
+                        android:textSize="@dimen/_10ssp"
+                        app:backgroundTint="@color/putih" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lyKodePost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyKelurahan"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/labelKodepos"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/kode_pos"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/colorBlack"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:focusableInTouchMode="false"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+                        android:hint="@string/kode_pos"
+                        android:id="@+id/valueKodepos"
+                        android:textColor="@color/colorGreen"
+                        android:textColorHint="@color/colorGreen"
+                        android:textSize="@dimen/_10ssp"
+                        app:backgroundTint="@color/putih" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyAlamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lyKodePost"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/labelAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/alamat"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/colorBlack"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:focusableInTouchMode="true"
+                        android:focusable="true"
+                        android:cursorVisible="true"
+                        android:hint="@string/alamat"
+                        android:id="@+id/valueAlamat"
+                        android:textColor="@color/colorGreen"
+                        android:textColorHint="@color/colorGreen"
+                        android:textSize="@dimen/_10ssp"
+                        app:backgroundTint="@color/putih" />
+
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/lyButtonOcr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/lyAlamat"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp">
+
+                    <Button
+                        android:id="@+id/btnSimpan"
+                        android:paddingLeft="@dimen/_35sdp"
+                        android:paddingRight="@dimen/_35sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/simpan"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite"
+                        android:background="@drawable/border_rounded_blue"
+                        />
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ly_loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cc1c1c1c"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/iv_progress_image"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/img_anim_loading"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

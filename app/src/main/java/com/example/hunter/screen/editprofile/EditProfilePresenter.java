@@ -11,6 +11,7 @@ import com.example.hunter.data.local.db.HunterDatabase;
 import com.example.hunter.data.local.db.entity.UserEntity;
 import com.example.hunter.data.local.preference.PreferenceRepository;
 import com.example.hunter.data.remote.RemoteRepository;
+import com.example.hunter.data.remote.bean.EditUserBean;
 import com.example.hunter.screen.login.LoginContract;
 import com.example.hunter.utils.StringUtils;
 import com.example.hunter.utils.TimeUtils;
@@ -167,7 +168,7 @@ public class EditProfilePresenter implements EditProfileContract.Presenter {
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(response -> {
                                 mView.setLoadingIndicator(false);
-                                getUser(userName);
+                                getUser(response);
                             }, error -> {
                                 mView.setLoadingIndicator(false);
                                 ANError anError = (ANError) error;
@@ -192,71 +193,54 @@ public class EditProfilePresenter implements EditProfileContract.Presenter {
 
     }
 
-    private void getUser(Integer userId) {
+    private void getUser(EditUserBean reponse) {
         if(mView==null){
             return;
         }
 
-        compositeDisposable.add(remoteRepository.getUser(userId)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(reponse -> {
-                    Log.e("ini error apa", new Gson().toJson(reponse));
-                    mView.setLoadingIndicator(false);
-
-                    UserEntity userEntity = new UserEntity();
-                    userEntity.setUserId(reponse.getData().getId_user());
-                    userEntity.setAlamat(reponse.getData().getAlamat());
-                    userEntity.setCreated_at(reponse.getData().getCreated_at());
-                    userEntity.setDate_login(reponse.getData().getDate_login());
-                    userEntity.setDate_register(reponse.getData().getDate_register());
-                    userEntity.setEmail(reponse.getData().getEmail());
-                    userEntity.setFlag_active(reponse.getData().getFlag_active());
-                    userEntity.setHidden_otp(reponse.getData().getHidden_otp());
-                    userEntity.setIs_deleted(reponse.getData().getIs_deleted());
-                    userEntity.setNama_lengkap(reponse.getData().getNama_lengkap());
-                    userEntity.setNo_hp(reponse.getData().getNo_hp());
-                    userEntity.setNo_ktp(reponse.getData().getNo_ktp());
-                    userEntity.setOtp(reponse.getData().getOtp());
-                    userEntity.setPicture(reponse.getData().getPicture());
-                    userEntity.setPoint(reponse.getData().getPoint());
-                    userEntity.setRole(reponse.getData().getRole());
-                    userEntity.setUpdated_at(reponse.getData().getUpdated_at());
-                    userEntity.setKtp_picture(reponse.getData().getKtp_picture());
-                    userEntity.setTgl_lahir(reponse.getData().getTgl_lahir());
-                    userEntity.setGender(reponse.getData().getGender());
-                    userEntity.setProvinsi(reponse.getData().getProvinsi());
-                    userEntity.setKabupaten(reponse.getData().getKabupaten());
-                    userEntity.setKecamatan(reponse.getData().getKecamatan());
-                    userEntity.setKelurahan(reponse.getData().getKelurahan());
-                    userEntity.setKodepos(reponse.getData().getKodepos());
-
-                    preferenceRepo.setUserLogged(true);
-                    compositeDisposable.add(Completable.fromAction(() -> {
-                                hunterDatabase.userDao().deleteUser();
-                                hunterDatabase.userDao().insertUser(userEntity);
-                            }).subscribeOn(Schedulers.io())
-                                    .observeOn(AndroidSchedulers.mainThread())
-                                    .subscribe()
-                    );
-
-                    mView.gotoProfile();
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUserId(reponse.getLoginBean().getId_user());
+        userEntity.setAlamat(reponse.getLoginBean().getAlamat());
+        userEntity.setCreated_at(reponse.getLoginBean().getCreated_at());
+        userEntity.setDate_login(reponse.getLoginBean().getDate_login());
+        userEntity.setDate_register(reponse.getLoginBean().getDate_register());
+        userEntity.setEmail(reponse.getLoginBean().getEmail());
+        userEntity.setFlag_active(reponse.getLoginBean().getFlag_active());
+        userEntity.setHidden_otp(reponse.getLoginBean().getHidden_otp());
+        userEntity.setIs_deleted(reponse.getLoginBean().getIs_deleted());
+        userEntity.setNama_lengkap(reponse.getLoginBean().getNama_lengkap());
+        userEntity.setNo_hp(reponse.getLoginBean().getNo_hp());
+        userEntity.setNo_ktp(reponse.getLoginBean().getNo_ktp());
+        userEntity.setOtp(reponse.getLoginBean().getOtp());
+        userEntity.setPicture(reponse.getLoginBean().getPicture());
+        userEntity.setPoint(reponse.getLoginBean().getPoint());
+        userEntity.setRole(reponse.getLoginBean().getRole());
+        userEntity.setUpdated_at(reponse.getLoginBean().getUpdated_at());
+        userEntity.setKtp_picture(reponse.getLoginBean().getKtp_picture());
+        userEntity.setTgl_lahir(reponse.getLoginBean().getTgl_lahir());
+        userEntity.setGender(reponse.getLoginBean().getGender());
+        userEntity.setProvinsi(reponse.getLoginBean().getProvinsi());
+        userEntity.setKabupaten(reponse.getLoginBean().getKabupaten());
+        userEntity.setKecamatan(reponse.getLoginBean().getKecamatan());
+        userEntity.setKelurahan(reponse.getLoginBean().getKelurahan());
+        userEntity.setKodepos(reponse.getLoginBean().getKodepos());
+        userEntity.setKabupaten_id(reponse.getLoginBean().getKabupaten_id());
+        userEntity.setKecamatan_id(reponse.getLoginBean().getKecamatan_id());
+        userEntity.setProvinsi_id(reponse.getLoginBean().getProvinsi_id());
+        userEntity.setKelurahan_id(reponse.getLoginBean().getKelurahan_id());
+        userEntity.setKodepos_id(reponse.getLoginBean().getKodepos_id());
 
 
-                }, error -> {
-                    mView.setLoadingIndicator(false);
-
-                    ANError anError = (ANError) error;
-                    Log.e("ini error apa", new Gson().toJson(anError));
-                    if (anError.getErrorDetail().equals(ANConstants.CONNECTION_ERROR)) {
-                        mView.showErrorMessage(application.getString(R.string.message_connection_lost));
-                    } else {
-                        if (anError.getErrorBody() != null) {
-                            mView.showErrorMessage(anError.getErrorBody());
-                        }
-                    }
-                })
+        preferenceRepo.setUserLogged(true);
+        compositeDisposable.add(Completable.fromAction(() -> {
+                    hunterDatabase.userDao().deleteUser();
+                    hunterDatabase.userDao().insertUser(userEntity);
+                }).subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe()
         );
+
+        mView.gotoProfile();
 
     }
 }

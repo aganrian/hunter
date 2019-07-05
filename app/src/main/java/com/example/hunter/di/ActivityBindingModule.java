@@ -1,5 +1,7 @@
 package com.example.hunter.di;
 
+import com.example.hunter.screen.alamat.AlamatActivity;
+import com.example.hunter.screen.alamat.AlamatModule;
 import com.example.hunter.screen.announcement.AnnouncementModule;
 import com.example.hunter.screen.biodata.BiodataActivity;
 import com.example.hunter.screen.biodata.BiodataModule;
@@ -80,5 +82,9 @@ abstract class ActivityBindingModule {
     @ActivityScoped
     @ContributesAndroidInjector(modules = EditProfileModule.class)
     abstract EditProfileActivity editProfileActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector(modules = AlamatModule.class)
+    abstract AlamatActivity alamatActivity();
 
 }

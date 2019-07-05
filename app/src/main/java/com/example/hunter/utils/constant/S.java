@@ -17,4 +17,9 @@ public class S {
     public static String KTP ="KTP";
     public static String PROFILE = "PROFILE";
 
+    public static String PROVINCE = "PROVINCE";
+    public static String REGENCY = "REGENCY";
+    public static String DISTRICT = "DISTRICT";
+    public static String VILLAGE = "VILLAGE";
+    public static String POSTCODE = "POSTCODE";
 }

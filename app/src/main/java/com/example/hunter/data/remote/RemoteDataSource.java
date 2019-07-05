@@ -1,5 +1,7 @@
 package com.example.hunter.data.remote;
 
+import android.util.Log;
+
 import com.androidnetworking.common.Priority;
 import com.example.hunter.data.local.preference.PreferenceRepository;
 import com.example.hunter.data.remote.bean.AnnouncementBean;
@@ -10,6 +12,7 @@ import com.example.hunter.data.remote.bean.Historyreportbean;
 import com.example.hunter.data.remote.bean.LoginBean;
 import com.example.hunter.data.remote.bean.OcrBean;
 import com.example.hunter.data.remote.bean.ProductBean;
+import com.example.hunter.data.remote.bean.ProvinceBean;
 import com.example.hunter.data.remote.bean.RegisterBean;
 import com.example.hunter.data.remote.bean.ResetPasswordBean;
 import com.example.hunter.data.remote.bean.ResultRedeem;
@@ -254,6 +257,41 @@ public class RemoteDataSource implements RemoteRepository {
                 .setPriority(Priority.MEDIUM)
                 .build()
                 .getObjectSingle(BaseBean.class);
+    }
+
+    @Override
+    public Single<ProvinceBean> listProvince(String type,Integer id) {
+        if(type==null || type.equalsIgnoreCase("")){
+            return Rx2AndroidNetworking.get(BuildConfig.API_URL + "provinces")
+                    .setPriority(Priority.MEDIUM)
+                    .build()
+                    .getObjectSingle(ProvinceBean.class);
+        }else if(type.equalsIgnoreCase(S.REGENCY)){
+            return Rx2AndroidNetworking.get(BuildConfig.API_URL + "regencies?province_id={province_id}")
+                    .setPriority(Priority.MEDIUM)
+                    .addPathParameter("province_id",String.valueOf(id))
+                    .build()
+                    .getObjectSingle(ProvinceBean.class);
+        }else if(type.equalsIgnoreCase(S.DISTRICT)){
+            return Rx2AndroidNetworking.get(BuildConfig.API_URL + "districts?regency_id={regency_id}")
+                    .setPriority(Priority.MEDIUM)
+                    .addPathParameter("regency_id",String.valueOf(id))
+                    .build()
+                    .getObjectSingle(ProvinceBean.class);
+        }else if(type.equalsIgnoreCase(S.VILLAGE)){
+            return Rx2AndroidNetworking.get(BuildConfig.API_URL + "villages?district_id={district_id}")
+                    .setPriority(Priority.MEDIUM)
+                    .addPathParameter("district_id",String.valueOf(id))
+                    .build()
+                    .getObjectSingle(ProvinceBean.class);
+        }else{
+            return Rx2AndroidNetworking.get(BuildConfig.API_URL + "postcodes?village_id={village_id}")
+                    .setPriority(Priority.MEDIUM)
+                    .addPathParameter("village_id",String.valueOf(id))
+                    .build()
+                    .getObjectSingle(ProvinceBean.class);
+        }
+
     }
 }
 

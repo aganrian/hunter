@@ -112,7 +112,7 @@
     <string name="tanggal_laporan">Tanggal Laporan</string>
     <string name="detils">Details</string>
     <string name="fillNopolisiManual">Masukan no polisi yang ingin Anda laporkan</string>
-    <string name="profile">Profile</string>
+    <string name="profile">Profil</string>
     <string name="alamat">Alamat</string>
     <string name="mitra">Mitra</string>
     <string name="aturan_pengguna">Aturan Pengguna</string>
@@ -134,4 +134,27 @@
     <string name="email">Email</string>
     <string name="simpan">Simpan</string>
     <string name="success_extend">Permintaan akan diproses minimal 3 hari kerja</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="kabupatenkota">Kabupaten/Kota</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="kelurahan">Kelurahan</string>
+    <string name="kode_pos">Kode Pos</string>
+    <string name="pilih_provinsi">Pilih provinsi</string>
+    <string name="error_village">Silahkan Pilih kelurahan terlebih dahulu</string>
+    <string name="errro_district">Silahkan Pilih kecamatan terlebih dahulu</string>
+    <string name="error_regency">Silahkan Pilih kabupaten terlebih dahulu</string>
+    <string name="error_province">Silahkan Pilih propinsi terlebih dahulu</string>
+    <string name="choose_kodepos">Pilih Kode Pos</string>
+    <string name="choose_village">Pilih Kelurahan</string>
+    <string name="choose_district">Pilih Kecamatan</string>
+    <string name="chooseRegency">Pilih Kabupaten/Kota</string>
+    <string name="fillData">Silakan lengkapi data Anda</string>
+    <string name="fillDataAlamat">Silakan lengkapi isian alamat Anda</string>
+    <string name="help">Pusat Bantuan</string>
+    <string name="privacy">Kebijakan Privasi</string>
+    <string name="version">Versi Aplikasi</string>
+    <string name="pilih_regency">Pilih Kabupaten/Kota</string>
+    <string name="pilih_kecamatan">Pilih Kecamatan</string>
+    <string name="pilihKelurahan">Pilih Kelurahan</string>
+    <string name="pilihkodepos">Pilih Kode Pos</string>
 </resources>

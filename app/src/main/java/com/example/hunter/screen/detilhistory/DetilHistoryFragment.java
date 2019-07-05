@@ -53,51 +53,6 @@ public class DetilHistoryFragment extends BaseFragment implements DetilHistoryCo
     @Inject
     @Named("DATA")
     Historyreportbean.Data data;
-//
-//    @Inject
-//    @Named("VEHICLE_ID")
-//    Integer vehicleId;
-//
-//    @Inject
-//    @Named("NO_POLICE")
-//    String noPolice;
-//
-//
-//    @Inject
-//    @Named("MERK")
-//    String merk;
-//
-//    @Inject
-//    @Named("TAHUN_KENDARAAN")
-//    Integer tahunKendaraan;
-//
-//    @Inject
-//    @Named("JENIS_KENDARAAN")
-//    String jenisKendaraan;
-//
-//    @Inject
-//    @Named("OVERDUE_MONTH")
-//    Integer overdueMonth;
-//
-//    @Inject
-//    @Named("STATUS")
-//    String statusData;
-//
-//    @Inject
-//    @Named("LEASING")
-//    String leasing;
-//
-//    @Inject
-//    @Named("DEBITUR")
-//    String debiturName;
-//
-//    @Inject
-//    @Named("STATUS_HANDLING")
-//    String statusHandling;
-//
-//    @Inject
-//    @Named("ID_LAPOR")
-//    Integer idLapor;
 
 
     @BindView(R.id.imageplat)

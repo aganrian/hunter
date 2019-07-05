@@ -12,6 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.hunter.adapter.ReviewContentPagerAdapter;
 import com.example.hunter.base.BaseFragment;
+import com.example.hunter.screen.alamat.AlamatActivity;
 import com.example.hunter.screen.editprofile.EditProfileActivity;
 import com.example.hunter.screen.history.HistoryContract;
 import com.example.hunter.screen.historyredeem.HistoryRedeemFragment;
@@ -105,5 +106,10 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Vie
     @OnClick(R.id.menuProfile)
     public void menuProfile(){
         startActivity(new Intent(parentActivity(), EditProfileActivity.class));
+    }
+
+    @OnClick(R.id.menuAlamat)
+    public void menuAlamat(){
+        startActivity(new Intent(parentActivity(), AlamatActivity.class));
     }
 }

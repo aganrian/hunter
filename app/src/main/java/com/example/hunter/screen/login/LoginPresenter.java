@@ -112,8 +112,14 @@ public class LoginPresenter implements LoginContract.Presenter {
                         userEntity.setKecamatan(reponse.getKecamatan());
                         userEntity.setKelurahan(reponse.getKelurahan());
                         userEntity.setKodepos(reponse.getKodepos());
+                        userEntity.setKabupaten_id(reponse.getKabupaten_id());
+                        userEntity.setKecamatan_id(reponse.getKecamatan_id());
+                        userEntity.setProvinsi_id(reponse.getProvinsi_id());
+                        userEntity.setKelurahan_id(reponse.getKelurahan_id());
+                        userEntity.setKodepos_id(reponse.getKodepos_id());
 
-                        preferenceRepo.setUserLogged(true);
+
+                    preferenceRepo.setUserLogged(true);
                         compositeDisposable.add(Completable.fromAction(() -> {
                                     oaseDatabase.userDao().deleteUser();
                                     oaseDatabase.userDao().insertUser(userEntity);

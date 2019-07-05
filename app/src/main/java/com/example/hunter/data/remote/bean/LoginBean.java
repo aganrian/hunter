@@ -1,5 +1,7 @@
 package com.example.hunter.data.remote.bean;
 
+import androidx.room.ColumnInfo;
+
 import com.google.gson.annotations.SerializedName;
 
 public class LoginBean  {
@@ -147,6 +149,41 @@ public class LoginBean  {
     @SerializedName("kodepos")
     private String kodepos;
 
+    @SerializedName("provinsi_id")
+    private Integer provinsi_id;
+
+    @SerializedName ("kabupaten_id")
+    private Integer kabupaten_id;
+
+    @SerializedName ("kecamatan_id")
+    private Integer kecamatan_id;
+
+    @SerializedName ("kelurahan_id")
+    private Integer kelurahan_id;
+
+    @SerializedName ("kodepos_id")
+    private Integer kodepos_id;
+
+    public Integer getKabupaten_id() {
+        return kabupaten_id;
+    }
+
+    public Integer getKecamatan_id() {
+        return kecamatan_id;
+    }
+
+    public Integer getKelurahan_id() {
+        return kelurahan_id;
+    }
+
+    public Integer getKodepos_id() {
+        return kodepos_id;
+    }
+
+    public Integer getProvinsi_id() {
+        return provinsi_id;
+    }
+
     public String getKabupaten() {
         return kabupaten;
     }
@@ -178,4 +215,7 @@ public class LoginBean  {
     public String getTgl_lahir() {
         return tgl_lahir;
     }
+
+
+
 }

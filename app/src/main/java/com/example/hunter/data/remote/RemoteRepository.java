@@ -8,6 +8,7 @@ import com.example.hunter.data.remote.bean.Historyreportbean;
 import com.example.hunter.data.remote.bean.LoginBean;
 import com.example.hunter.data.remote.bean.OcrBean;
 import com.example.hunter.data.remote.bean.ProductBean;
+import com.example.hunter.data.remote.bean.ProvinceBean;
 import com.example.hunter.data.remote.bean.RegisterBean;
 import com.example.hunter.data.remote.bean.ResetPasswordBean;
 import com.example.hunter.data.remote.bean.ResultRedeem;
@@ -62,6 +63,6 @@ public interface RemoteRepository {
 
     Single<BaseBean> ajukanPerpanjangan(Integer userId, Integer vehicleId);
 
-
+    Single<ProvinceBean> listProvince(String type,Integer id);
 
 }
