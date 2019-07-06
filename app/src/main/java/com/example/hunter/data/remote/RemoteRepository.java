@@ -51,7 +51,7 @@ public interface RemoteRepository {
 
     Single<OcrBean> uploadOcr(File file,Integer userId);
 
-    Single<VehicleReportBean> vehilceReport(Integer userId, Integer vehilceId,String noPolice);
+    Single<VehicleReportBean> vehilceReport(Integer userId, Integer vehilceId,String noPolice,File file,String lat,String longi);
 
     Single<VehicleReportBean> vehilceEditHandler(Integer userId, Integer vehilceId);
 

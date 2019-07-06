@@ -14,6 +14,8 @@ import com.example.hunter.data.remote.RemoteRepository;
 import com.example.hunter.screen.otp.OtpContract;
 import com.example.hunter.utils.StringUtils;
 
+import org.json.JSONObject;
+
 import javax.inject.Inject;
 
 import id.oase.indonesia.oasebrdiepa.R;
@@ -95,7 +97,8 @@ public class ForgotPasswordPresenter implements ForgotPasswordContract.Presenter
                         mView.showErrorMessage(application.getString(R.string.message_connection_lost));
                     } else {
                         if (anError.getErrorBody() != null) {
-                            mView.showErrorMessage(anError.getErrorBody());
+                            JSONObject jsonObject = new JSONObject(anError.getErrorBody());
+                            mView.showErrorMessage(jsonObject.optString("status"));
                         }
                     }
                 })

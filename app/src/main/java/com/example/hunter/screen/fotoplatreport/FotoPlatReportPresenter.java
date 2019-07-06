@@ -17,6 +17,8 @@ import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
+import java.io.File;
+
 import javax.inject.Inject;
 
 import id.oase.indonesia.oasebrdiepa.R;
@@ -63,7 +65,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
     }
 
     @Override
-    public void getVehicleReport(String noPolice) {
+    public void getVehicleReport(String noPolice, File imageFile, String latitude, String longitude) {
         if(mView==null){
             return;
         }
@@ -73,7 +75,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
                 Completable.fromAction(() -> {
                     Integer userName = oaseDatabase.userDao().getUserId();
 
-                    compositeDisposable.add(remoteRepository.vehilceReport(userName,null,noPolice)
+                    compositeDisposable.add(remoteRepository.vehilceReport(userName,null,noPolice,imageFile,latitude,longitude)
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(reponse -> {
@@ -104,7 +106,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
     }
 
     @Override
-    public void getVehicleReportWithHandler(Integer vehilceId, String noPolice) {
+    public void getVehicleReportWithHandler(Integer vehilceId, String noPolice,File imageFile,String latitude,String longitude) {
         if(mView==null){
             return;
         }
@@ -113,16 +115,11 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
                 Completable.fromAction(() -> {
                     Integer userName = oaseDatabase.userDao().getUserId();
 
-                    compositeDisposable.add(remoteRepository.vehilceReport(userName,vehilceId,noPolice)
+                    compositeDisposable.add(remoteRepository.vehilceReport(userName,vehilceId,noPolice,imageFile,latitude,longitude)
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(reponse -> {
-                                if(reponse.getAlreadyMember()==1){
-                                    editHandler(vehilceId);
-                                }else {
-                                    mView.showPenawaranMitra(reponse.getPartnerId());
-                                }
-
+                                editHandler(vehilceId);
                             }, error -> {
                                 mView.setLoadingIndicator(false);
                                 ANError anError = (ANError) error;
@@ -148,7 +145,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
     }
 
     @Override
-    public void getVehicleReport(Integer vehilceId,String noPolice) {
+    public void getVehicleReport(Integer vehilceId,String noPolice,File imageFile,String latitude,String longitude) {
         if(mView==null){
             return;
         }
@@ -158,7 +155,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
                 Completable.fromAction(() -> {
                     Integer userName = oaseDatabase.userDao().getUserId();
 
-                    compositeDisposable.add(remoteRepository.vehilceReport(userName,vehilceId,noPolice)
+                    compositeDisposable.add(remoteRepository.vehilceReport(userName,vehilceId,noPolice,imageFile,latitude,longitude)
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(reponse -> {
@@ -204,7 +201,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(reponse -> {
                                 mView.setLoadingIndicator(false);
-                                 getUser();
+                                getUser();
                             }, error -> {
                                 mView.setLoadingIndicator(false);
                                 ANError anError = (ANError) error;

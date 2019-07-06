@@ -18,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.hunter.base.BaseFragment;
+import com.example.hunter.custom.CustomDialog;
 import com.example.hunter.data.local.db.entity.UserEntity;
 import com.example.hunter.screen.main.MainActivity;
 import com.example.hunter.utils.ImageUtils;
@@ -116,7 +117,25 @@ public class EditProfileFragment extends BaseFragment implements EditProfileCont
 
     @Override
     public void showErrorMessage(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        CustomDialog customDialog = new CustomDialog();
+        customDialog.showDialog(parentActivity(),"",message,"",
+                false,false,false);
+        customDialog.setOnDialogResultListener(new CustomDialog.OnDialogClickBtnListener() {
+            @Override
+            public void onPositiveLisneter() {
+
+            }
+
+            @Override
+            public void onNegativeListener() {
+
+            }
+
+            @Override
+            public void onOkListener() {
+
+            }
+        });
     }
 
     @Override
@@ -354,5 +373,13 @@ public class EditProfileFragment extends BaseFragment implements EditProfileCont
         }
         mPresenterLogin.updateData(edNama.getText().toString(),edNoTelp.getText().toString(),edTglLahir.getText().toString(),
                valueJenisGender,edNoKtp.getText().toString());
+    }
+
+    @OnClick(R.id.ibBack)
+    public void back(){
+        Intent intent =  new Intent(parentActivity(), MainActivity.class);
+        intent.putExtra(MainActivity.FROM,4);
+        startActivity(intent);
+        parentActivity().finishAffinity();
     }
 }

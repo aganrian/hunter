@@ -1,5 +1,6 @@
 package com.example.hunter.screen.fotoplatreport;
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -15,16 +16,20 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
 import com.example.hunter.base.BaseFragment;
 import com.example.hunter.custom.CustomDialog;
 import com.example.hunter.data.remote.bean.OcrBean;
 import com.example.hunter.screen.main.MainActivity;
 import com.example.hunter.screen.splash.SplashActivity;
+import com.example.hunter.utils.GPSTracker;
 import com.example.hunter.utils.ImageUtils;
 import com.example.hunter.utils.constant.S;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -32,8 +37,12 @@ import javax.inject.Named;
 import butterknife.BindView;
 import butterknife.OnClick;
 import id.oase.indonesia.oasebrdiepa.R;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
 
 public class FotoPlatReportFragment extends BaseFragment implements FotoPlatReportContract.View {
+
+    private static final int CAMERA_REQUEST_CODE = 100;
 
     @Inject
     FotoPlatReportContract.Presenter mPresenter;
@@ -133,15 +142,19 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
     @BindView(R.id.edNoPolisiManual)
     EditText edNoPolisiManual;
 
+    private GPSTracker gpsTracker;
+
     @Inject
     public FotoPlatReportFragment(){
-
+        gpsTracker = new GPSTracker(parentActivity());
     }
 
     @Override
     protected int getLayoutView() {
         return R.layout.fragment_fotoplat_report;
     }
+
+    private File fileImage ;
 
     @Override
     protected void initView(Bundle state) {
@@ -150,7 +163,8 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
         rlMainUtama.setVisibility(View.VISIBLE);
         Bitmap bitmap = null;
         try {
-            bitmap = MediaStore.Images.Media.getBitmap(parentActivity().getContentResolver(), Uri.fromFile(new File(imagePath)));
+            fileImage = new File(imagePath);
+            bitmap = MediaStore.Images.Media.getBitmap(parentActivity().getContentResolver(), Uri.fromFile(fileImage));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -228,6 +242,44 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
     public void onResume() {
         super.onResume();
         mPresenter.takeView(this);
+        needPermissions(new String[]{
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION});
+    }
+
+    private String[] perms = {
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION};
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, parentActivity());
+    }
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        Log.e("OK", "Permission has been granted");
+        if(gpsTracker.canGetLocation()){
+            if(flag.equalsIgnoreCase(S.S_KIRIM_YA)){
+                mPresenter.getVehicleReportWithHandler(vehicleId,noPolice,fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
+            }else if(flag.equalsIgnoreCase(S.S_KIRIM_NO)){
+                mPresenter.getVehicleReport(vehicleId,noPolice,fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
+            }else{
+                if(statusData.equalsIgnoreCase(S.NOT_FOUND_VEHICLE)){
+                    mPresenter.getVehicleReport(noPolice,fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
+                }else{
+                    mPresenter.getVehicleReport(vehicleId,noPolice,fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
+                }
+            }
+        }else{
+            gpsTracker.showSettingsAlert();
+        }
+    }
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        if (EasyPermissions.somePermissionPermanentlyDenied(parentActivity(), perms)) {
+            new AppSettingsDialog.Builder(parentActivity()).build().show();
+        }
     }
 
     @Override
@@ -236,23 +288,55 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
         mPresenter.dropView();
     }
 
+    private String flag;
+
     @OnClick(R.id.btnKirim)
     public void onKirim(){
-        mPresenter.getVehicleReportWithHandler(vehicleId,noPolice);
+        flag = S.S_KIRIM_YA;
+        gpsTracker = new GPSTracker(parentActivity());
+        if(EasyPermissions.hasPermissions(parentActivity(), perms)){
+            if(gpsTracker.canGetLocation()){
+                mPresenter.getVehicleReportWithHandler(vehicleId,noPolice,fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
+            }else{
+                gpsTracker.showSettingsAlert();
+            }
+        }else{
+            EasyPermissions.requestPermissions(this, getString(R.string.message_permission), CAMERA_REQUEST_CODE, perms);
+        }
     }
 
 
     @OnClick(R.id.btnBatal)
     public void btnBtl(){
-        mPresenter.getVehicleReport(vehicleId,noPolice);
+        flag = S.S_KIRIM_NO;
+        gpsTracker = new GPSTracker(parentActivity());
+        if(EasyPermissions.hasPermissions(parentActivity(), perms)){
+            if(gpsTracker.canGetLocation()){
+                mPresenter.getVehicleReport(vehicleId,noPolice,fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
+            }else{
+                gpsTracker.showSettingsAlert();
+            }
+        }else{
+            EasyPermissions.requestPermissions(this, getString(R.string.message_permission), CAMERA_REQUEST_CODE, perms);
+        }
     }
 
     @OnClick(R.id.btnOke)
     public void btnOke(){
-        if(statusData.equalsIgnoreCase(S.NOT_FOUND_VEHICLE)){
-            mPresenter.getVehicleReport(noPolice);
+        flag = S.S_KIRIM_OK;
+        gpsTracker = new GPSTracker(parentActivity());
+        if(EasyPermissions.hasPermissions(parentActivity(), perms)){
+            if(gpsTracker.canGetLocation()){
+                if(statusData.equalsIgnoreCase(S.NOT_FOUND_VEHICLE)){
+                    mPresenter.getVehicleReport(noPolice,fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
+                }else{
+                    mPresenter.getVehicleReport(vehicleId,noPolice,fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
+                }
+            }else{
+                gpsTracker.showSettingsAlert();
+            }
         }else{
-            mPresenter.getVehicleReport(vehicleId,noPolice);
+            EasyPermissions.requestPermissions(this, getString(R.string.message_permission), CAMERA_REQUEST_CODE, perms);
         }
     }
 
@@ -356,49 +440,4 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
         mPresenter.kirimManual(edNoPolisiManual.getText().toString());
     }
 
-    @Override
-    public void showPenawaranMitra(Integer partnerId) {
-        CustomDialog customDialog = new CustomDialog();
-        customDialog.showDialog(parentActivity(),getString(R.string.titleMitraResmi),getString(R.string.contentMitraResmi),
-                getString(R.string.footerMitraResmi),false,true,true);
-        customDialog.setOnDialogResultListener(new CustomDialog.OnDialogClickBtnListener() {
-            @Override
-            public void onPositiveLisneter() {
-
-            }
-
-            @Override
-            public void onNegativeListener() {
-                    showDialog("Terima kasih sudah berpartisipasi mengirimkan\nlaporan kepada Kami.Anda akan mendapatkan\npoin untuk laporan ini");
-            }
-
-            @Override
-            public void onOkListener() {
-
-            }
-        });
-    }
-
-
-    private void showDialog(String message){
-        CustomDialog customDialog = new CustomDialog();
-        customDialog.showDialog(parentActivity(),"",message,"",
-                false,false,false);
-        customDialog.setOnDialogResultListener(new CustomDialog.OnDialogClickBtnListener() {
-            @Override
-            public void onPositiveLisneter() {
-
-            }
-
-            @Override
-            public void onNegativeListener() {
-
-            }
-
-            @Override
-            public void onOkListener() {
-                gotoHistory();
-            }
-        });
-    }
 }

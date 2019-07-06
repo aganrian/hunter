@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hunter.base.BaseFragment;
+import com.example.hunter.custom.CustomDialog;
 import com.example.hunter.screen.biodata.BiodataActivity;
 import com.example.hunter.screen.otp.OtpActivity;
 import com.example.hunter.screen.otp.OtpContract;
@@ -62,7 +63,25 @@ public class ForgotPasswordFragment extends BaseFragment implements ForgotPasswo
 
     @Override
     public void showErrorMessage(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        CustomDialog customDialog = new CustomDialog();
+        customDialog.showDialog(parentActivity(),"",message,"",
+                false,false,false);
+        customDialog.setOnDialogResultListener(new CustomDialog.OnDialogClickBtnListener() {
+            @Override
+            public void onPositiveLisneter() {
+
+            }
+
+            @Override
+            public void onNegativeListener() {
+
+            }
+
+            @Override
+            public void onOkListener() {
+
+            }
+        });
     }
 
 

@@ -22,4 +22,9 @@ public class S {
     public static String DISTRICT = "DISTRICT";
     public static String VILLAGE = "VILLAGE";
     public static String POSTCODE = "POSTCODE";
+
+    public static String S_KIRIM_YA = "S_KIRIM_YA";
+    public static String S_KIRIM_NO = "S_KIRIM_NO";
+    public static String S_KIRIM_OK = "S_KIRIM_OK";
+
 }

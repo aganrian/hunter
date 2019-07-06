@@ -78,7 +78,8 @@ public class HistoryFragment extends BaseFragment implements HistoryContract.Vie
         ActionBar mActionBar = parentActivity().getSupportActionBar();
         assert mActionBar != null;
         mActionBar.setDisplayShowTitleEnabled(true);
-        mActionBar.setTitle("History");
+        mActionBar.setTitle(getString(R.string.rwyt));
+
 
         initTab(viewPager);
         tabLayout.setupWithViewPager(viewPager);
@@ -93,8 +94,8 @@ public class HistoryFragment extends BaseFragment implements HistoryContract.Vie
 
         HistoryReportFragment historyReportFragment = new HistoryReportFragment();
         HistoryRedeemFragment historyRedeemFragment = new HistoryRedeemFragment();
-        adapter.addFragment(historyReportFragment,"LAPORAN");
-        adapter.addFragment(historyRedeemFragment,"REDEEM");
+        adapter.addFragment(historyReportFragment,getString(R.string.laporan));
+        adapter.addFragment(historyRedeemFragment,getString(R.string.redeem));
         viewPager.setAdapter(adapter);
 
         if(subFrom==null || subFrom == 0){

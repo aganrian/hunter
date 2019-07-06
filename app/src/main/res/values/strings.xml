@@ -107,7 +107,6 @@
     <string name="laki_laki">Laki Laki</string>
     <string name="perempuan">Perempuan</string>
     <string name="ketikNoPolisi">Ketik nomor Polisi</string>
-    <string name="redeem">REDEEM</string>
     <string name="pointLabel">point</string>
     <string name="tanggal_laporan">Tanggal Laporan</string>
     <string name="detils">Details</string>
@@ -120,7 +119,7 @@
     <string name="tanggalLahir">Tanggal Lahir</string>
     <string name="search_no">Cari Nomor Kendaraan</string>
     <string name="search_product">Cari Produk</string>
-    <string name="not_point_enough">Poin tidak mencukup</string>
+    <string name="not_point_enough">Poin tidak mencukupi</string>
     <string name="wantRedeem">Anda ingin menukar Poin?</string>
     <string name="titleMitraResmi">Anda belum terdaftar menjadi Mitra Resmi</string>
     <string name="contentMitraResmi">Untuk dapat menangani kendaraan ini. Anda harus terdaftar sebagai mitra resmi</string>
@@ -157,4 +156,7 @@
     <string name="pilih_kecamatan">Pilih Kecamatan</string>
     <string name="pilihKelurahan">Pilih Kelurahan</string>
     <string name="pilihkodepos">Pilih Kode Pos</string>
+    <string name="rwyt">RIWAYAT</string>
+    <string name="laporan">LAPORAN</string>
+    <string name="redeem">REDEEM</string>
 </resources>

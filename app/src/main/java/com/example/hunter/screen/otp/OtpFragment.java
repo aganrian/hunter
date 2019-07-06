@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hunter.base.BaseFragment;
+import com.example.hunter.custom.CustomDialog;
 import com.example.hunter.screen.biodata.BiodataActivity;
 import com.example.hunter.screen.changepassword.ChangePasswordActivity;
 import com.example.hunter.screen.login.LoginContract;
@@ -137,7 +138,25 @@ public class OtpFragment extends BaseFragment implements OtpContract.View {
 
     @Override
     public void showErrorMessage(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        CustomDialog customDialog = new CustomDialog();
+        customDialog.showDialog(parentActivity(),"",message,"",
+                false,false,false);
+        customDialog.setOnDialogResultListener(new CustomDialog.OnDialogClickBtnListener() {
+            @Override
+            public void onPositiveLisneter() {
+
+            }
+
+            @Override
+            public void onNegativeListener() {
+
+            }
+
+            @Override
+            public void onOkListener() {
+
+            }
+        });
     }
 
     @Override

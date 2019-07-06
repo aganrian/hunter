@@ -30,7 +30,7 @@ public class CustomDialog {
 
         if(isHeader){
             mTitle.setVisibility(View.VISIBLE);
-            mTitle.setText(content);
+            mTitle.setText(title);
         }else{
             mTitle.setVisibility(View.GONE);
         }

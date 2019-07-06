@@ -186,8 +186,8 @@ public class HomeFragment extends BaseFragment implements HomeContract.View,Prod
             });
         }else{
             CustomDialog customDialog = new CustomDialog();
-            customDialog.showDialog(parentActivity(),"","",getString(R.string.wantRedeem),
-                    true,false,false);
+            customDialog.showDialog(parentActivity(),"",getString(R.string.wantRedeem),"",
+                    true,true,false);
             customDialog.setOnDialogResultListener(new CustomDialog.OnDialogClickBtnListener() {
                 @Override
                 public void onPositiveLisneter() {

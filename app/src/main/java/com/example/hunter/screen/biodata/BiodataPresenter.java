@@ -120,7 +120,8 @@ public class BiodataPresenter implements BiodataContract.Presenter {
                         mView.showErrorMessage(application.getString(R.string.message_connection_lost));
                     } else {
                         if (anError.getErrorBody() != null) {
-                            mView.showErrorMessage(anError.getErrorBody());
+                            JSONObject jsonObject = new JSONObject(anError.getErrorBody());
+                            mView.showErrorMessage(jsonObject.optString("status"));
                         }
                     }
                 })
@@ -194,7 +195,8 @@ public class BiodataPresenter implements BiodataContract.Presenter {
                         mView.showErrorMessage(application.getString(R.string.message_connection_lost));
                     } else {
                         if (anError.getErrorBody() != null) {
-                            mView.showErrorMessage(anError.getErrorBody());
+                            JSONObject jsonObject = new JSONObject(anError.getErrorBody());
+                            mView.showErrorMessage(jsonObject.optString("status"));
                         }
                     }
                 })

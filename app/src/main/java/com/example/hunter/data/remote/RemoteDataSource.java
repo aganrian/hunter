@@ -143,10 +143,10 @@ public class RemoteDataSource implements RemoteRepository {
     }
 
     @Override
-    public Single<BaseBean> changePassword(String userId, String pass) {
-        return Rx2AndroidNetworking.patch(BuildConfig.API_URL + "users?user_id={user_id}&password={pass}")
+    public Single<BaseBean> changePassword(String userId, String password) {
+        return Rx2AndroidNetworking.patch(BuildConfig.API_URL + "users?user_id={user_id}&password={password}")
                 .addPathParameter("user_id",userId)
-                .addPathParameter("password",pass)
+                .addPathParameter("password",password)
                 .setPriority(Priority.MEDIUM)
                 .build()
                 .getObjectSingle(BaseBean.class);
@@ -182,20 +182,27 @@ public class RemoteDataSource implements RemoteRepository {
     }
 
     @Override
-    public Single<VehicleReportBean> vehilceReport(Integer userId, Integer vehicle_id,String no_polisi) {
+    public Single<VehicleReportBean> vehilceReport(Integer userId, Integer vehicle_id,String no_polisi,
+                                                   File file, String latitude,String longitude) {
         if(vehicle_id==null){
-            return Rx2AndroidNetworking.post(BuildConfig.API_URL + "vehicles/report?user_id={user_id}&no_polisi={no_polisi}")
+            return Rx2AndroidNetworking.upload(BuildConfig.API_URL + "vehicles/report?user_id={user_id}&no_polisi={no_polisi}&longitude={longitude}&latitude={latitude}")
+                    .addMultipartFile("image",file)
                     .addPathParameter("user_id",String.valueOf(userId))
                     .addPathParameter("no_polisi",no_polisi)
+                    .addPathParameter("latitude",latitude)
+                    .addPathParameter("longitude",longitude)
                     .setPriority(Priority.MEDIUM)
                     .build()
                     .getObjectSingle(VehicleReportBean.class);
         }
 
-        return Rx2AndroidNetworking.post(BuildConfig.API_URL + "vehicles/report?user_id={user_id}&vehicle_id={vehicle_id}&no_polisi={no_polisi}")
+        return Rx2AndroidNetworking.upload(BuildConfig.API_URL + "vehicles/report?user_id={user_id}&vehicle_id={vehicle_id}&no_polisi={no_polisi}&longitude={longitude}&latitude={latitude}")
+                .addMultipartFile("image",file)
                 .addPathParameter("user_id",String.valueOf(userId))
                 .addPathParameter("vehicle_id",String.valueOf(vehicle_id))
                 .addPathParameter("no_polisi",no_polisi)
+                .addPathParameter("latitude",latitude)
+                .addPathParameter("longitude",longitude)
                 .setPriority(Priority.MEDIUM)
                 .build()
                 .getObjectSingle(VehicleReportBean.class);

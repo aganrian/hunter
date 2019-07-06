@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 
 import com.example.hunter.base.BaseFragment;
+import com.example.hunter.custom.CustomDialog;
 import com.example.hunter.screen.forgotpassword.ForgotPasswordActivity;
 import com.example.hunter.screen.main.MainActivity;
 import com.example.hunter.screen.register.RegisterActivity;
@@ -57,7 +58,25 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
 
     @Override
     public void showErrorMessage(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        CustomDialog customDialog = new CustomDialog();
+        customDialog.showDialog(parentActivity(),"",message,"",
+                false,false,false);
+        customDialog.setOnDialogResultListener(new CustomDialog.OnDialogClickBtnListener() {
+            @Override
+            public void onPositiveLisneter() {
+
+            }
+
+            @Override
+            public void onNegativeListener() {
+
+            }
+
+            @Override
+            public void onOkListener() {
+
+            }
+        });
     }
 
     @Override

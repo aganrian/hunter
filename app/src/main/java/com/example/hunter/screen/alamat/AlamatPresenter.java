@@ -19,6 +19,8 @@ import com.example.hunter.utils.constant.S;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import org.json.JSONObject;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -279,7 +281,8 @@ public class AlamatPresenter implements AlamatContract.Presenter {
                                     mView.showErrorMessage(application.getString(R.string.message_connection_lost));
                                 } else {
                                     if (anError.getErrorBody() != null) {
-                                        mView.showErrorMessage(anError.getErrorBody());
+                                        JSONObject jsonObject = new JSONObject(anError.getErrorBody());
+                                        mView.showErrorMessage(jsonObject.optString("status"));
                                     }
                                 }
                             })

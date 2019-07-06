@@ -5,6 +5,8 @@ import com.example.hunter.base.BasePresenter;
 import com.example.hunter.base.BaseView;
 import com.example.hunter.data.remote.bean.OcrBean;
 
+import java.io.File;
+
 public interface FotoPlatReportContract {
 
     interface View extends BaseView<Presenter> {
@@ -17,19 +19,17 @@ public interface FotoPlatReportContract {
 
         void gotoSummary(String status, OcrBean.Data data);
 
-        void showPenawaranMitra(Integer partnerId);
-
     }
 
     interface Presenter extends BasePresenter<View> {
 
-        void getVehicleReport(Integer vehilceId,String noPolice);
+        void getVehicleReport(Integer vehilceId, String noPolice, File imageFile,String latitude,String longitude);
 
-        void getVehicleReport(String noPolice);
+        void getVehicleReport(String noPolice,File imageFile,String latitude,String longitude);
 
         void editHandler (Integer vehilceId);
 
-        void getVehicleReportWithHandler(Integer vehilceId,String noPolice);
+        void getVehicleReportWithHandler(Integer vehilceId,String noPolice,File imageFile,String latitude,String longitude);
 
         void getUser();
 
