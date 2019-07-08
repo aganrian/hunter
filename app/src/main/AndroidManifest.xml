@@ -106,6 +106,10 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name="com.example.hunter.screen.pages.PagesActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -114,8 +118,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
-
-
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="2cd27188a98911bd64c33f5e06a90d4519f3f14d" />
     </application>
 </manifest>

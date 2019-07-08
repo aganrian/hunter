@@ -97,8 +97,27 @@ public class HistoryReportAdapter extends RecyclerView.Adapter<HistoryReportAdap
         public void bind(Historyreportbean.Data beritaBean) {
 
             titleDate.setText(beritaBean.getCreated_at());
-            titleVoucher.setText(beritaBean.getNo_polisi());
-            titleStatus.setText(beritaBean.getStatus()==null?"":beritaBean.getStatus());
+
+            if(beritaBean.getNo_polisi()!=null){
+                titleVoucher.setText(beritaBean.getNo_polisi());
+            }else{
+                if(beritaBean.getNoCarPolice()!=null){
+                    titleVoucher.setText(beritaBean.getNoCarPolice());
+                }
+            }
+
+
+            if(beritaBean.getStatusHandling()==null){
+                if(beritaBean.getStatus()==null){
+                    titleStatus.setText("-");
+                }else{
+                    titleStatus.setText(beritaBean.getStatus());
+                }
+            }else{
+                titleStatus.setText(beritaBean.getStatusHandling());
+            }
+
+
             titlePoint.setText(beritaBean.getPoint()==null?"" : " +"+beritaBean.getPoint()+ " point");
             btnDetail.setOnClickListener(new View.OnClickListener() {
                 @Override

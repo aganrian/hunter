@@ -234,7 +234,25 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
 
     @Override
     public void showErrorMessage(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        CustomDialog customDialog = new CustomDialog();
+        customDialog.showDialog(parentActivity(),"",message,"",
+                false,false,false);
+        customDialog.setOnDialogResultListener(new CustomDialog.OnDialogClickBtnListener() {
+            @Override
+            public void onPositiveLisneter() {
+
+            }
+
+            @Override
+            public void onNegativeListener() {
+
+            }
+
+            @Override
+            public void onOkListener() {
+                gotoHistory();
+            }
+        });
     }
 
 

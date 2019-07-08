@@ -5,46 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/rlToolbarTop"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_header">
+        android:background="@drawable/bg_header"
+        android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/ibBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/spacing_normal"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/app_name"
-            android:src="?attr/homeAsUpIndicator" />
-
-
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:gravity="center_horizontal"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginBottom="@dimen/_20sdp">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/ivImage"
-                android:layout_width="@dimen/_70sdp"
-                android:layout_height="@dimen/_70sdp"
-                android:src="@drawable/ic_person"
-                app:civ_border_width="2dp"
-                app:civ_border_color="@color/putih"
-                android:layout_gravity="center"/>
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
 
-        </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/rlToolbarTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header">
 
-    </RelativeLayout>
+                <ImageButton
+                    android:id="@+id/ibBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/spacing_normal"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/app_name"
+                    android:src="?attr/homeAsUpIndicator" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivImage"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:src="@drawable/ic_person"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/putih"
+                        android:layout_gravity="center"/>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
 
 
     <ScrollView
-        android:layout_below="@id/rlToolbarTop"
+        android:layout_below="@id/appbarlayout"
         android:layout_marginLeft="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_5sdp"
         android:layout_width="match_parent"

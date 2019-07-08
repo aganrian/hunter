@@ -111,7 +111,14 @@ public class DetilHistoryFragment extends BaseFragment implements DetilHistoryCo
         ImageUtils.displayImageFromUrl(parentActivity(),imageView,
                 BuildConfig.API_URL_IMAGE_PLAT.concat(data.getPict_tumbnail()),null,R.drawable.ic_person);
 
-        valueNomorPolisi.setText(data.getNo_polisi());
+
+        if(data.getNo_polisi()!=null){
+            valueNomorPolisi.setText(data.getNo_polisi());
+        }else{
+            if(data.getNoCarPolice()!=null){
+                valueNomorPolisi.setText(data.getNoCarPolice());
+            }
+        }
 
 
         if(data.getCustomerName()==null || data.getCustomerName().equalsIgnoreCase("")){

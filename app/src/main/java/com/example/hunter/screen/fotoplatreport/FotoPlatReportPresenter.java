@@ -91,7 +91,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
                                 } else {
                                     if (anError.getErrorBody() != null) {
                                         JSONObject jsonObject = new JSONObject(anError.getErrorBody());
-                                        mView.showErrorMessage(jsonObject.optString("message"));
+                                        mView.showErrorMessage(jsonObject.optString("status"));
                                     }
                                 }
 
@@ -111,6 +111,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
             return;
         }
 
+        mView.setLoadingIndicator(true);
         compositeDisposable.add(
                 Completable.fromAction(() -> {
                     Integer userName = oaseDatabase.userDao().getUserId();
@@ -130,7 +131,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
                                 } else {
                                     if (anError.getErrorBody() != null) {
                                         JSONObject jsonObject = new JSONObject(anError.getErrorBody());
-                                        mView.showErrorMessage(jsonObject.optString("message"));
+                                        mView.showErrorMessage(jsonObject.optString("status"));
                                     }
                                 }
 
@@ -171,7 +172,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
                                 } else {
                                     if (anError.getErrorBody() != null) {
                                         JSONObject jsonObject = new JSONObject(anError.getErrorBody());
-                                        mView.showErrorMessage(jsonObject.optString("message"));
+                                        mView.showErrorMessage(jsonObject.optString("status"));
                                     }
                                 }
 
@@ -210,7 +211,7 @@ public class FotoPlatReportPresenter implements FotoPlatReportContract.Presenter
                                 } else {
                                     if (anError.getErrorBody() != null) {
                                         JSONObject jsonObject = new JSONObject(anError.getErrorBody());
-                                        mView.showErrorMessage(jsonObject.optString("message"));
+                                        mView.showErrorMessage(jsonObject.optString("status"));
                                     }
                                 }
 

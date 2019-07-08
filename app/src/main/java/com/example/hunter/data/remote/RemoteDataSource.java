@@ -11,6 +11,7 @@ import com.example.hunter.data.remote.bean.HistoryRedeembean;
 import com.example.hunter.data.remote.bean.Historyreportbean;
 import com.example.hunter.data.remote.bean.LoginBean;
 import com.example.hunter.data.remote.bean.OcrBean;
+import com.example.hunter.data.remote.bean.PagesBean;
 import com.example.hunter.data.remote.bean.ProductBean;
 import com.example.hunter.data.remote.bean.ProvinceBean;
 import com.example.hunter.data.remote.bean.RegisterBean;
@@ -299,6 +300,15 @@ public class RemoteDataSource implements RemoteRepository {
                     .getObjectSingle(ProvinceBean.class);
         }
 
+    }
+
+    @Override
+    public Single<PagesBean> pagesBeans(Integer id) {
+        return Rx2AndroidNetworking.get(BuildConfig.API_URL + "pages?id={id}")
+                .addPathParameter("id",String.valueOf(id))
+                .setPriority(Priority.MEDIUM)
+                .build()
+                .getObjectSingle(PagesBean.class);
     }
 }
 

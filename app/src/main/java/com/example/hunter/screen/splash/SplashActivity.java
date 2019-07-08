@@ -10,9 +10,11 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 
 
+import com.crashlytics.android.Crashlytics;
 import com.example.hunter.screen.login.LoginActivity;
 import com.example.hunter.screen.main.MainActivity;
 
+import io.fabric.sdk.android.Fabric;
 import javax.inject.Inject;
 
 import butterknife.BindView;
@@ -34,6 +36,7 @@ public class SplashActivity extends DaggerAppCompatActivity implements SplashCon
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash);
         mUnbinder = ButterKnife.bind(this);
         mPresenterSplash.takeView(this);

@@ -95,12 +95,6 @@ public class HomeFragment extends BaseFragment implements HomeContract.View,Prod
 
     @Override
     public void setLoadingIndicator(boolean active) {
-        parentActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                progressBar.setVisibility(active ? View.VISIBLE : View.GONE);
-            }
-        });
 
     }
 

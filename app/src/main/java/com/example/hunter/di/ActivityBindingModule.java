@@ -26,6 +26,8 @@ import com.example.hunter.screen.login.LoginActivity;
 import com.example.hunter.screen.login.LoginModule;
 import com.example.hunter.screen.otp.OtpActivity;
 import com.example.hunter.screen.otp.OtpModule;
+import com.example.hunter.screen.pages.PagesActivity;
+import com.example.hunter.screen.pages.PagesModule;
 import com.example.hunter.screen.profile.ProfileModule;
 import com.example.hunter.screen.register.RegisterActivity;
 import com.example.hunter.screen.register.RegisterModule;
@@ -86,5 +88,9 @@ abstract class ActivityBindingModule {
     @ActivityScoped
     @ContributesAndroidInjector(modules = AlamatModule.class)
     abstract AlamatActivity alamatActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector(modules = PagesModule.class)
+    abstract PagesActivity pagesActivity();
 
 }

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_header"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                    <ImageButton
+                        android:id="@+id/ibBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_normal"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/app_name"
+                        android:src="?attr/homeAsUpIndicator" />
+
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_16sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal" />
+    <RelativeLayout
+        android:id="@+id/ly_loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cc1c1c1c"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/iv_progress_image"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/img_anim_loading"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

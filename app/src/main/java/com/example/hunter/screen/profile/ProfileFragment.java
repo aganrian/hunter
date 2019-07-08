@@ -19,6 +19,7 @@ import com.example.hunter.screen.historyredeem.HistoryRedeemFragment;
 import com.example.hunter.screen.historyreport.HistoryReportFragment;
 import com.example.hunter.screen.login.LoginActivity;
 import com.example.hunter.screen.main.MainActivity;
+import com.example.hunter.screen.pages.PagesActivity;
 import com.example.hunter.utils.ImageUtils;
 import com.google.android.material.tabs.TabLayout;
 
@@ -112,4 +113,37 @@ public class ProfileFragment extends BaseFragment implements ProfileContract.Vie
     public void menuAlamat(){
         startActivity(new Intent(parentActivity(), AlamatActivity.class));
     }
+
+    @OnClick(R.id.menuHelp)
+    public void menuHelp(){
+        Intent intent = new Intent(parentActivity(), PagesActivity.class);
+        intent.putExtra(PagesActivity.ID_PAGES,1);
+        intent.putExtra(PagesActivity.TITLE_PAGES,parentActivity().getString(R.string.help));
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.menuKebijakan)
+    public void menuKebijakan(){
+        Intent intent = new Intent(parentActivity(), PagesActivity.class);
+        intent.putExtra(PagesActivity.ID_PAGES,2);
+        intent.putExtra(PagesActivity.TITLE_PAGES,parentActivity().getString(R.string.privacy));
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.menuRules)
+    public void menuRules(){
+        Intent intent = new Intent(parentActivity(), PagesActivity.class);
+        intent.putExtra(PagesActivity.ID_PAGES,3);
+        intent.putExtra(PagesActivity.TITLE_PAGES,parentActivity().getString(R.string.aturan_pengguna));
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.menuAplikasi)
+    public void menuAplikasi(){
+        Intent intent = new Intent(parentActivity(), PagesActivity.class);
+        intent.putExtra(PagesActivity.ID_PAGES,4);
+        intent.putExtra(PagesActivity.TITLE_PAGES,parentActivity().getString(R.string.version));
+        startActivity(intent);
+    }
+
 }

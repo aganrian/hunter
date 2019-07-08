@@ -7,6 +7,7 @@ import com.example.hunter.data.remote.bean.HistoryRedeembean;
 import com.example.hunter.data.remote.bean.Historyreportbean;
 import com.example.hunter.data.remote.bean.LoginBean;
 import com.example.hunter.data.remote.bean.OcrBean;
+import com.example.hunter.data.remote.bean.PagesBean;
 import com.example.hunter.data.remote.bean.ProductBean;
 import com.example.hunter.data.remote.bean.ProvinceBean;
 import com.example.hunter.data.remote.bean.RegisterBean;
@@ -64,5 +65,7 @@ public interface RemoteRepository {
     Single<BaseBean> ajukanPerpanjangan(Integer userId, Integer vehicleId);
 
     Single<ProvinceBean> listProvince(String type,Integer id);
+
+    Single<PagesBean> pagesBeans(Integer id);
 
 }

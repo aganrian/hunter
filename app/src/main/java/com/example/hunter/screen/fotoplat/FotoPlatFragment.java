@@ -98,7 +98,6 @@ public class FotoPlatFragment extends BaseFragment implements FotoPlatContract.V
     public void gotoSummary(String status, OcrBean.Data data) {
         Intent intent = null;
         if(status.equalsIgnoreCase(S.FOUND_VEHICLE) ){
-
             if(data.getIdLapor()==null){
                 if(data.getStatus_handling()==null){
                     intent = new Intent(parentActivity(), FotoPlatReportActivity.class);
@@ -228,7 +227,6 @@ public class FotoPlatFragment extends BaseFragment implements FotoPlatContract.V
     }
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
-        Log.e("OK", "Permission has been granted");
         EasyImage.openCamera(this, 0);
     }
     @Override
