@@ -19,7 +19,7 @@ import org.json.JSONObject;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -93,6 +93,8 @@ public class OtpPresenter implements OtpContract.Presenter {
 
     }
 
+
+    /*Validasi Otp ke backend*/
     @Override
     public void sendOtp(Integer userId, String otp,String from) {
         if(mView==null){

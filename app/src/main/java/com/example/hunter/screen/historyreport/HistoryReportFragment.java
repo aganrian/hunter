@@ -23,8 +23,9 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*fragment history report*/
 public class HistoryReportFragment extends BaseFragment implements HistoryReportContract.View, HistoryReportAdapter.OnClickListener {
 
     @Inject
@@ -53,6 +54,7 @@ public class HistoryReportFragment extends BaseFragment implements HistoryReport
     protected void initView(Bundle state) {
         mPresenterLogin.takeView(this);
         search.setHint(getString(R.string.search_no));
+        /*get list data*/
         mPresenterLogin.getListHistory();
         reportHistoryRecycleView.setLayoutManager(new LinearLayoutManager(parentActivity()));
         reportHistoryRecycleView.setHasFixedSize(true);
@@ -77,6 +79,7 @@ public class HistoryReportFragment extends BaseFragment implements HistoryReport
         });
     }
 
+    /*set list ke adapter*/
     @Override
     public void setListHistory(List<Historyreportbean.Data> list) {
         adapter.setGroupList(list);
@@ -101,6 +104,7 @@ public class HistoryReportFragment extends BaseFragment implements HistoryReport
     }
 
 
+    /*ini untuk liat detil history*/
     @Override
     public void OnClickBerita(Historyreportbean.Data beritaBean) {
         Intent intent = new Intent(parentActivity(), DetilHistoryActivity.class);

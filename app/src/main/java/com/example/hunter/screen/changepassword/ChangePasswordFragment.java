@@ -20,7 +20,7 @@ import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
 public class ChangePasswordFragment extends BaseFragment implements ChangePasswordContract.View {
 
@@ -103,6 +103,7 @@ public class ChangePasswordFragment extends BaseFragment implements ChangePasswo
         mPresenterOtp.dropView();
     }
 
+    /*ketika berhasil ganti login lgsg di suruh login ulang*/
     @Override
     public void goToLogin() {
         Intent intent = new Intent(parentActivity(), LoginActivity.class);
@@ -110,6 +111,7 @@ public class ChangePasswordFragment extends BaseFragment implements ChangePasswo
         parentActivity().finishAffinity();
     }
 
+    /*action ketika ganti passsword*/
     @OnClick(R.id.changePass)
     public void changePass(){
         mPresenterOtp.changePassword(idUser,edPassword.getText().toString(),edPassConfirm.getText().toString());

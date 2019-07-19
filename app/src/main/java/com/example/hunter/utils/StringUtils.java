@@ -3,6 +3,7 @@ package com.example.hunter.utils;
 import java.text.DecimalFormat;
 import java.util.regex.Pattern;
 
+/*Helper untuk membantu modifikasi string */
 public class StringUtils {
 
 

@@ -21,8 +21,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.oase.indonesia.oasebrdiepa.R;
-
+import com.example.hunter.R;
+/*Adapter untuk menghandle report history yang akan menghandle list nya*/
 public class HistoryReportAdapter extends RecyclerView.Adapter<HistoryReportAdapter.ItemVH> {
 
     private List<Historyreportbean.Data> productBeans;

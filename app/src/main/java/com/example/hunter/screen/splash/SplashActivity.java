@@ -21,9 +21,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import dagger.android.support.DaggerAppCompatActivity;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
-
+/*Acitivty splash ini yang pertama akan di panggil oleh aplikasi*/
 public class SplashActivity extends DaggerAppCompatActivity implements SplashContract.View {
 
     private Unbinder mUnbinder;
@@ -51,6 +51,8 @@ public class SplashActivity extends DaggerAppCompatActivity implements SplashCon
 
     }
 
+
+    /*Action metode untuk pindah ke Main Activity sehabis Splah jika ada data login / sudah login*/
     @Override
     public void gotoHome() {
         Intent i = new Intent(SplashActivity.this, MainActivity.class);
@@ -58,6 +60,7 @@ public class SplashActivity extends DaggerAppCompatActivity implements SplashCon
         finish();
     }
 
+    /*action metode ketika sehabis splash screen namun data belum ada dia harus login terlebih dahulu*/
     @Override
     public void gotoLogin() {
         Intent i = new Intent(SplashActivity.this, LoginActivity.class);

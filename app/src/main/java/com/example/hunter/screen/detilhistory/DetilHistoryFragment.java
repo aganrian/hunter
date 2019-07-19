@@ -39,8 +39,8 @@ import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.BuildConfig;
+import com.example.hunter.R;
 import pl.aprilapps.easyphotopicker.EasyImage;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
@@ -105,6 +105,7 @@ public class DetilHistoryFragment extends BaseFragment implements DetilHistoryCo
         return R.layout.fragment_detilhistory;
     }
 
+    /*set data data yang berada di list history*/
     @Override
     protected void initView(Bundle state) {
         mPresenter.takeView(this);
@@ -191,6 +192,7 @@ public class DetilHistoryFragment extends BaseFragment implements DetilHistoryCo
 
     }
 
+    /*action untuk klik ajuan perpanjangan*/
     private static final int CAMERA_REQUEST_CODE = 100;
     @OnClick(R.id.btnAjuan)
     public void btnAjuan(){

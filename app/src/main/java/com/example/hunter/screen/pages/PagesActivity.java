@@ -12,8 +12,9 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import dagger.android.support.DaggerAppCompatActivity;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*activity pages */
 public class PagesActivity extends DaggerAppCompatActivity {
 
     public static String TITLE_PAGES = "TITLE_PAGES";

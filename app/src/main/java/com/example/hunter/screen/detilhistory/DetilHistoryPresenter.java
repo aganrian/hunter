@@ -19,7 +19,7 @@ import org.json.JSONObject;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -62,6 +62,7 @@ public class DetilHistoryPresenter implements DetilHistoryContract.Presenter {
         compositeDisposable.clear();
     }
 
+    /*presenter data untuk ajukan perpanjangan */
     @Override
     public void ajukanPerpanjangan(Integer vehicleId) {
         if(mView==null){

@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-
+/*Helper untuk membantu transaksi antar Activity dan fragment*/
 public class ActivityUtils {
 
     public static void addFragmentToActivity(FragmentManager fragmentManager,

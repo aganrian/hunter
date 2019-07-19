@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
+/*variable dari report history response*/
 public class Historyreportbean implements Serializable {
 
     @SerializedName("data")

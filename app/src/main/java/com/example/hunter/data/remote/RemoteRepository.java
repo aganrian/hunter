@@ -22,6 +22,9 @@ import java.io.File;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 
+
+/*untuk menambakan Api kedepannya silahkan di tambahkan di sini
+* terlebih dahulu ini adalah interface API*/
 public interface RemoteRepository {
 
     Single<LoginBean> postUserLogin(String email, String password);

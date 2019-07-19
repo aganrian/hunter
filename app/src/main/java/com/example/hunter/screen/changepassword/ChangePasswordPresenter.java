@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
@@ -58,6 +58,7 @@ public class ChangePasswordPresenter implements ChangePasswordContract.Presenter
         compositeDisposable.clear();
     }
 
+    /*memanggil api untuk ganti password*/
     @Override
     public void changePassword(Integer userId,String pass, String confirmPass) {
         if(mView==null){
@@ -84,6 +85,7 @@ public class ChangePasswordPresenter implements ChangePasswordContract.Presenter
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(reponse -> {
                     mView.setLoadingIndicator(false);
+                    /*ketika berhasil ke login*/
                     mView.goToLogin();
                 }, error -> {
                     mView.setLoadingIndicator(false);

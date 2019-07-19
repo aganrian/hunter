@@ -25,7 +25,7 @@ import java.util.UUID;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -68,7 +68,7 @@ public class BiodataPresenter implements BiodataContract.Presenter {
         compositeDisposable.clear();
     }
 
-
+    /*update data register ke backend / database*/
     @Override
     public void doNext(Integer userId,String otp, String nama, String tanggalLahir, String gender, String email, String noKtp, File profile, File ktp) {
         if(mView==null){
@@ -110,6 +110,7 @@ public class BiodataPresenter implements BiodataContract.Presenter {
                 .subscribe(response -> {
                     mView.setLoadingIndicator(false);
                     Log.e("ini error apa", new Gson().toJson(response));
+                    /*jika berhasil akan get data user untuk memastikan apakah berhasil ke input*/
                     getUser(userId);
                 }, error -> {
                     mView.setLoadingIndicator(false);
@@ -128,6 +129,7 @@ public class BiodataPresenter implements BiodataContract.Presenter {
         );
     }
 
+    /*metode get data user*/
     @Override
     public void getUser(Integer userId) {
         if(mView==null){
@@ -183,6 +185,7 @@ public class BiodataPresenter implements BiodataContract.Presenter {
                                     .subscribe()
                     );
 
+                    /*ketika berhasil get data user ke home activity*/
                     mView.gotoHomeActivity();
 
 

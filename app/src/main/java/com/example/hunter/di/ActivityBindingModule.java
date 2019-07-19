@@ -37,6 +37,7 @@ import com.example.hunter.screen.splash.SplashModule;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
+/*dagger dependencies jadi setiap akan menambah module dalam suatu aktifitas / fragment silahkan tambahan modulenya di sini*/
 @Module
 abstract class ActivityBindingModule {
 

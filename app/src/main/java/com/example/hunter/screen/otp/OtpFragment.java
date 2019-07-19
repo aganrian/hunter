@@ -25,10 +25,11 @@ import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
+/*Fragment otp*/
 public class OtpFragment extends BaseFragment implements OtpContract.View {
 
     @Inject
@@ -158,6 +159,7 @@ public class OtpFragment extends BaseFragment implements OtpContract.View {
             }
         });
     }
+    /*ketika berhasil otp di validasi akan ke layar Biodata jika memang otp di butuhkan saat register baru*/
 
     @Override
     public void goToIsiProfile() {
@@ -170,6 +172,7 @@ public class OtpFragment extends BaseFragment implements OtpContract.View {
         parentActivity().finish();
     }
 
+    /*ketika berhasil otp di validasi akan ke layar ganti password jika memang otp di butuhkan saat ganti password*/
     @Override
     public void goToChangePassword() {
         Intent intent = new Intent(parentActivity(), ChangePasswordActivity.class);
@@ -180,6 +183,7 @@ public class OtpFragment extends BaseFragment implements OtpContract.View {
     }
 
 
+    /*action ketika tombol validasi OTP*/
     @OnClick(R.id.nextOtp)
     public void nextOtp(){
         if(editTexts.length<6){
@@ -284,6 +288,7 @@ public class OtpFragment extends BaseFragment implements OtpContract.View {
 
     }
 
+    /*action ketika resend otp di klik*/
     @OnClick(R.id.resendOtp)
     public void resendOtp(){
         mPresenterOtp.resendCodeOtp(idUser);

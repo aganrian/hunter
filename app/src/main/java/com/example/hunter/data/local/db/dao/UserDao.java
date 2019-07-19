@@ -11,6 +11,7 @@ import java.util.List;
 
 import io.reactivex.Flowable;
 
+/*Data akses object atau query untuk table dari user pada sqlite*/
 @Dao
 public interface UserDao {
 

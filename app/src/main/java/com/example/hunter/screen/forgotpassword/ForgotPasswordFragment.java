@@ -24,7 +24,7 @@ import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
@@ -98,7 +98,7 @@ public class ForgotPasswordFragment extends BaseFragment implements ForgotPasswo
         mPresenterOtp.dropView();
     }
 
-
+    /*action ketika berhasil lupa password di arahkan ke otp dahulu*/
     @Override
     public void setForgotPassword(Integer userId, String email) {
         Intent intent = new Intent(parentActivity(), OtpActivity.class);
@@ -109,6 +109,7 @@ public class ForgotPasswordFragment extends BaseFragment implements ForgotPasswo
         startActivity(intent);
     }
 
+    /*action ketika memanggil lupa password*/
     @OnClick(R.id.nextOtp)
     public void toOtp(){
         mPresenterOtp.callForgotPassword(edEmail.getText().toString());

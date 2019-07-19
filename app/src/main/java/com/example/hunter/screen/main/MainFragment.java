@@ -24,7 +24,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import javax.inject.Inject;
 import butterknife.BindView;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
 public class MainFragment extends BaseFragment implements MainContract.View{
 
@@ -124,6 +124,7 @@ public class MainFragment extends BaseFragment implements MainContract.View{
 
     }
 
+    /*inisialisasi screen yang terdiri dari dashboard, history, announcement dan profile fragment */
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
         HomeFragment homeFragment = new HomeFragment();

@@ -21,7 +21,7 @@ import java.io.File;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;

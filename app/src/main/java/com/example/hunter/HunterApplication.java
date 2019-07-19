@@ -9,7 +9,6 @@ import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
 import io.fabric.sdk.android.Fabric;
 
 public class HunterApplication extends DaggerApplication {

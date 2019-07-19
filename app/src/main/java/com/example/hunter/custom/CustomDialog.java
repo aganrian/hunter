@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
 public class CustomDialog {
 

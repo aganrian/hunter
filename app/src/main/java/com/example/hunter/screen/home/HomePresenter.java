@@ -19,7 +19,7 @@ import org.json.JSONObject;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -62,6 +62,7 @@ public class HomePresenter implements HomeContract.Presenter {
         compositeDisposable.clear();
     }
 
+    /*function metode untuk mengambil data user dari sql lite*/
     @Override
     public void getHomeInformation() {
         if(mView==null){
@@ -83,6 +84,7 @@ public class HomePresenter implements HomeContract.Presenter {
         );
     }
 
+    /*function untuk memanggil list product dari API ketika swipe*/
     @Override
     public void getProductAllRefreseh() {
         if(mView==null){
@@ -113,6 +115,7 @@ public class HomePresenter implements HomeContract.Presenter {
         );
     }
 
+    /*function untuk memanggil list product dari API ketika not swipe*/
     @Override
     public void getProductAll() {
         if(mView==null){
@@ -143,6 +146,7 @@ public class HomePresenter implements HomeContract.Presenter {
         );
     }
 
+    /*api untuk melaukan product reedem dari list*/
     @Override
     public void productReadem(Integer productId) {
         if(mView==null){
@@ -161,6 +165,7 @@ public class HomePresenter implements HomeContract.Presenter {
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(reponse -> {
+                                //ketika berhasil akan update data point dari user
                                 updateUserData(reponse.getPoint());
                             }, error -> {
                                 mView.setLoadingIndicator(false);
@@ -183,6 +188,7 @@ public class HomePresenter implements HomeContract.Presenter {
         );
     }
 
+    //update data user untuk point
     private void updateUserData(Integer pointChange){
         if(mView==null){
             return;

@@ -4,6 +4,8 @@ package com.example.hunter.screen.register;
 import com.example.hunter.base.BasePresenter;
 import com.example.hunter.base.BaseView;
 
+/*class contract yang akan mengatur transaksi di dalam register jadi jika ada mw koneksi ke data/model silahkan
+* tambahkan ke presenter, tapi jika dari presenter ingin melakukan view tambahkan ke View*/
 public interface RegisterContract {
 
     interface View extends BaseView<Presenter> {
@@ -18,7 +20,7 @@ public interface RegisterContract {
 
     interface Presenter extends BasePresenter<View> {
 
-        void doLogin(String nama,String email, String password);
+        void doRegister(String nama, String email, String password);
 
     }
 }

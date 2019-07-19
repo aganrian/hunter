@@ -19,8 +19,9 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*fragment Login */
 public class LoginFragment extends BaseFragment implements LoginContract.View {
 
     @Inject
@@ -79,6 +80,8 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
         });
     }
 
+
+
     @Override
     public void gotoHomeActivity() {
        Intent intent =  new Intent(parentActivity(), MainActivity.class);
@@ -86,6 +89,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
         parentActivity().finishAffinity();
     }
 
+    /*action ketika tombol login di tekan*/
     @OnClick(R.id.loginbtn)
     public void doLogin(){
         mPresenterLogin.doLogin(edEmail.getText().toString(),edPassword.getText().toString());
@@ -103,11 +107,13 @@ public class LoginFragment extends BaseFragment implements LoginContract.View {
         mPresenterLogin.dropView();
     }
 
+    /*action ketika tombool register di tekan*/
     @OnClick(R.id.buttonRegister)
     public void register(){
         startActivity(new Intent(parentActivity(), RegisterActivity.class));
     }
 
+    /*action ketika tombol lupa password di tekan*/
     @OnClick(R.id.idLupaPassword)
     public void lupaPassword(){
         startActivity(new Intent(parentActivity(), ForgotPasswordActivity.class));

@@ -28,8 +28,8 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.BuildConfig;
+import com.example.hunter.R;
 
 public class ProfileFragment extends BaseFragment implements ProfileContract.View {
 

@@ -5,6 +5,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/*Entitas adalah tabel dari user */
 @Entity(tableName = "user_table")
 public class UserEntity {
 

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Jaison on 23/10/16.
+ * Created by Rian ade chandra on 23/10/16.
  */
 
-
+/*Adapter untk handle Slide menu */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
 

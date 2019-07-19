@@ -1,5 +1,6 @@
 package com.example.hunter.utils.constant;
 
+/*Variable static untuk transaksi antar value*/
 public class S {
 
     public static String FOUND_VEHICLE = "Vehicle found";

@@ -23,7 +23,7 @@ import java.io.File;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -66,6 +66,7 @@ public class FotoPlatPresenter implements FotoPlatContract.Presenter {
         compositeDisposable.clear();
     }
 
+    /*validasi ocr ke rest api*/
     @Override
     public void kirimOcr(File file) {
         if(mView==null){
@@ -93,9 +94,11 @@ public class FotoPlatPresenter implements FotoPlatContract.Presenter {
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(response -> {
+                                /*ocr ditemukan dengan berbagai kondisi*/
                                 mView.setLoadingIndicator(false);
                                 mView.gotoSummary(response.getStatus(),response.getData());
                             }, error -> {
+                                /*akan muncul error ocr dan akan d suruh input manual*/
                                 mView.setLoadingIndicator(false);
                                 mView.showInputManual();
                             })

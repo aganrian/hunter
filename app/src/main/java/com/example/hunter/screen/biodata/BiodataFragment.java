@@ -48,7 +48,7 @@ import javax.inject.Named;
 import butterknife.BindView;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import pl.aprilapps.easyphotopicker.DefaultCallback;
 import pl.aprilapps.easyphotopicker.EasyImage;
 import pub.devrel.easypermissions.AppSettingsDialog;
@@ -179,6 +179,7 @@ public class BiodataFragment extends BaseFragment implements BiodataContract.Vie
         parentActivity().finishAffinity();
     }
 
+    /*saat tombol biodata mengirimkan data ke backend*/
     @OnClick(R.id.nextButton)
     public void doLogin(){
         if(wanitaChoose.isChecked()){

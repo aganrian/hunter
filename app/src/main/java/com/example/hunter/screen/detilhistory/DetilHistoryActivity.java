@@ -12,8 +12,9 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import dagger.android.support.DaggerAppCompatActivity;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*activity saat history di list fragment history report di klik*/
 public class DetilHistoryActivity extends DaggerAppCompatActivity {
 
     public static String DATA = "DATA";

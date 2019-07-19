@@ -38,8 +38,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.BuildConfig;
+import com.example.hunter.R;
 import pl.aprilapps.easyphotopicker.DefaultCallback;
 import pl.aprilapps.easyphotopicker.EasyImage;
 import pub.devrel.easypermissions.AppSettingsDialog;
@@ -107,6 +107,7 @@ public class EditProfileFragment extends BaseFragment implements EditProfileCont
     @Override
     protected void initView(Bundle state) {
         mPresenterLogin.takeView(this);
+        /*get data profile dari sql lite*/
         mPresenterLogin.getDataProfile();
     }
 
@@ -177,6 +178,7 @@ public class EditProfileFragment extends BaseFragment implements EditProfileCont
         mPresenterLogin.dropView();
     }
 
+    /*set data profile dari presenter*/
     @Override
     public void setDataProfile(UserEntity userEntity) {
 
@@ -363,7 +365,10 @@ public class EditProfileFragment extends BaseFragment implements EditProfileCont
     }
 
 
+
     String valueJenisGender;
+
+    /*action btn simpan perubahan*/
     @OnClick(R.id.btnSimpan)
     public void btnSimpan(){
         if(wanitaChoose.isChecked()){

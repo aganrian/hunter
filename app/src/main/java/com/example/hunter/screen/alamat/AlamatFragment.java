@@ -26,7 +26,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
 public class AlamatFragment extends BaseFragment implements AlamatContract.View {
 
@@ -100,10 +100,12 @@ public class AlamatFragment extends BaseFragment implements AlamatContract.View 
     }
 
 
+
     @Override
     public void onResume() {
         super.onResume();
         mPresenterLogin.takeView(this);
+        /*ambil get alamat sekarang yang existing di sql lite*/
         mPresenterLogin.getAlamat();
     }
 
@@ -113,6 +115,7 @@ public class AlamatFragment extends BaseFragment implements AlamatContract.View 
         mPresenterLogin.dropView();
     }
 
+    /*set kedalam view component*/
     @Override
     public void setAlamat(UserEntity userEntity) {
 
@@ -308,6 +311,7 @@ public class AlamatFragment extends BaseFragment implements AlamatContract.View 
         dialogProvince.setCanceledOnTouchOutside(true);
     }
 
+    /*simpan perubahan ketika berubah untuk almat*/
     @OnClick(R.id.btnSimpan)
     public void btnSimpan(){
         mPresenterLogin.simpanPerubahan(valueProvince.getText().toString(),provinceId,
@@ -317,6 +321,7 @@ public class AlamatFragment extends BaseFragment implements AlamatContract.View 
                 valueKodepos.getText().toString(),kodeposId,valueAlamat.getText().toString());
     }
 
+    /*ketika perubahan berhasil balik ke profile fragment*/
     @Override
     public void setPerubahan() {
         Intent intent =  new Intent(parentActivity(), MainActivity.class);

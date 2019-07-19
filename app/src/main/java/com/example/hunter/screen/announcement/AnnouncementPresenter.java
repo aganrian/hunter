@@ -6,6 +6,7 @@ import androidx.annotation.Nullable;
 
 import com.androidnetworking.common.ANConstants;
 import com.androidnetworking.error.ANError;
+import com.example.hunter.R;
 import com.example.hunter.data.local.db.HunterDatabase;
 import com.example.hunter.data.local.preference.PreferenceRepository;
 import com.example.hunter.data.remote.RemoteRepository;
@@ -15,7 +16,6 @@ import org.json.JSONObject;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -58,6 +58,7 @@ public class AnnouncementPresenter implements AnnouncementContract.Presenter {
         compositeDisposable.clear();
     }
 
+    /*get list announcement dari API Announcement*/
     @Override
     public void getListAnnouncement() {
         if(mView==null){

@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/*variable dari response propinsi dan kota serta kecamatan dan kelurahan serta kodepos*/
 public class ProvinceBean {
 
     @SerializedName("data")

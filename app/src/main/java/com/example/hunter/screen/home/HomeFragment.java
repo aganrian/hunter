@@ -26,8 +26,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import de.hdodenhof.circleimageview.CircleImageView;
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.BuildConfig;
+import com.example.hunter.R;
 
 public class HomeFragment extends BaseFragment implements HomeContract.View,ProductAdapter.OnClickListener {
 
@@ -72,13 +72,16 @@ public class HomeFragment extends BaseFragment implements HomeContract.View,Prod
     @Override
     protected void initView(Bundle state) {
         mPresenterLogin.takeView(this);
+        //gethome information mengambil data nama user, dan foto user
         mPresenterLogin.getHomeInformation();
+        //mengambil list product dari API
         mPresenterLogin.getProductAll();
         productRecycleView.setLayoutManager(new GridLayoutManager(parentActivity(),2));
         productRecycleView.setHasFixedSize(true);
         productRecycleView.setAdapter(productAdapter);
         productAdapter.setOnClickListener(this);
 
+        /*ketika swipe akan memanggil get list product jg*/
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -122,6 +125,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View,Prod
 
     }
 
+    /*ketika update berhasil akan refresh main activity*/
     @Override
     public void updatePoint(String point) {
         Intent i = new Intent(parentActivity(), MainActivity.class);
@@ -155,6 +159,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View,Prod
         mPresenterLogin.getUser();
     }
 
+    /*ketika tombol reedem product di click akan melakukan validasi terlebih dahulu */
     @Override
     public void OnClickBerita(Integer productId,Integer price) {
 
@@ -185,6 +190,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View,Prod
             customDialog.setOnDialogResultListener(new CustomDialog.OnDialogClickBtnListener() {
                 @Override
                 public void onPositiveLisneter() {
+                    /*memanggil api reedem product*/
                     mPresenterLogin.productReadem(productId);
                 }
 

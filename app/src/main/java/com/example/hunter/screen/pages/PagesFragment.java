@@ -21,8 +21,9 @@ import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*ketika dari menu profile di panggil pages yang bersangkutan*/
 public class PagesFragment extends BaseFragment implements PagesContract.View {
 
     @Inject
@@ -59,6 +60,7 @@ public class PagesFragment extends BaseFragment implements PagesContract.View {
     @Override
     protected void initView(Bundle state) {
         mPresenterLogin.takeView(this);
+        //load data pages yang di tentukan
         mPresenterLogin.getContent(idPages);
         tvTitle.setText(titlePages);
     }
@@ -104,6 +106,7 @@ public class PagesFragment extends BaseFragment implements PagesContract.View {
         mPresenterLogin.dropView();
     }
 
+    /*set content data pages dari presenter*/
     @Override
     public void setContent(String content) {
         tvContent.setText(content);

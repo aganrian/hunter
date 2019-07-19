@@ -17,8 +17,9 @@ import android.util.Log;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*Class Helper untuk membantu mendapatkan lat long dari GPS*/
 public class GPSTracker extends Service implements LocationListener {
 
     private final Context mContext;

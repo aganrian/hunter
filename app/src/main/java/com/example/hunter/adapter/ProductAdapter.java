@@ -22,9 +22,9 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
-import id.oase.indonesia.oasebrdiepa.R;
-
+import com.example.hunter.BuildConfig;
+import com.example.hunter.R;
+/*Adapter untuk menghandle list dari product*/
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ItemVH> {
 
     private List<ProductBean.Data> productBeans;

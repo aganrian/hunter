@@ -26,7 +26,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -69,6 +69,7 @@ public class EditProfilePresenter implements EditProfileContract.Presenter {
         compositeDisposable.clear();
     }
 
+    /*get data profule dari sql lite*/
     @Override
     public void getDataProfile() {
         if(mView==null){
@@ -88,6 +89,7 @@ public class EditProfilePresenter implements EditProfileContract.Presenter {
         );
     }
 
+    /*update image setiap berubah */
     @Override
     public void updateImage(File imageFile, String type) {
         if(mView==null){
@@ -141,6 +143,7 @@ public class EditProfilePresenter implements EditProfileContract.Presenter {
         );
     }
 
+    /*update data perubahaan*/
     @Override
     public void updateData(String nama, String nomorTelepon, String tanggalLahir, String gender, String noKtp) {
         if(mView==null){
@@ -195,6 +198,7 @@ public class EditProfilePresenter implements EditProfileContract.Presenter {
 
     }
 
+    /*get user saat perubahan update*/
     private void getUser(EditUserBean reponse) {
         if(mView==null){
             return;

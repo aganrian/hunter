@@ -21,8 +21,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.oase.indonesia.oasebrdiepa.R;
-
+import com.example.hunter.R;
+/*Adapter untuk menghandle hisotry reedeem*/
 public class HistoryReedemAdapter extends RecyclerView.Adapter<HistoryReedemAdapter.ItemVH> {
 
     private List<HistoryRedeembean.Data> productBeans;

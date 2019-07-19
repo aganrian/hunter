@@ -19,7 +19,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
 public class ListCustomAdapter extends RecyclerView.Adapter<ListCustomAdapter.ItemVH> {
 

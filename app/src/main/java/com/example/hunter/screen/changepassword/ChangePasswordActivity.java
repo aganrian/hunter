@@ -12,8 +12,9 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import dagger.android.support.DaggerAppCompatActivity;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*class ketika otp saat ganti password berhasil di arahkan ganti password*/
 public class ChangePasswordActivity extends DaggerAppCompatActivity {
 
     public static String USER_ID = "USER_ID";

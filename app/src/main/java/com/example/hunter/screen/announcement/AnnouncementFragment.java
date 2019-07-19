@@ -18,8 +18,9 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*fragment announcemet atau berita */
 public class AnnouncementFragment extends BaseFragment implements AnnouncementContract.View {
 
     @Inject
@@ -44,6 +45,7 @@ public class AnnouncementFragment extends BaseFragment implements AnnouncementCo
     @Override
     protected void initView(Bundle state) {
         mPresenterLogin.takeView(this);
+
         mPresenterLogin.getListAnnouncement();
         reportHistoryRecycleView.setLayoutManager(new LinearLayoutManager(parentActivity()));
         reportHistoryRecycleView.setHasFixedSize(true);

@@ -12,8 +12,10 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import dagger.android.support.DaggerAppCompatActivity;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+
+/*class alamat activity ini saat klik menu alamat di bagian profile*/
 public class AlamatActivity extends DaggerAppCompatActivity {
 
 

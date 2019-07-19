@@ -9,17 +9,18 @@ import android.view.ViewGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.hunter.R;
+
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import dagger.android.support.DaggerFragment;
-import id.oase.indonesia.oasebrdiepa.R;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
-
+/*class base yang akan menjadi pusat / induk dari fragment*/
 public abstract class BaseFragment extends DaggerFragment implements EasyPermissions.PermissionCallbacks {
 
     protected static final int PERMISSION_REQUEST_CODE = 2000;

@@ -4,11 +4,12 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.hunter.BuildConfig;
+
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
 
-
+/*Share preference penyimpanan data dalam memory selain dari sqlite*/
 public class PreferenceDataSource implements PreferenceRepository {
 
     private SharedPreferences mPreferences;

@@ -5,15 +5,18 @@ import android.app.Application;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.gsonparserfactory.GsonParserFactory;
 import com.androidnetworking.interceptors.HttpLoggingInterceptor;
+import com.example.hunter.BuildConfig;
 import com.example.hunter.data.remote.interceptor.ResponseInterceptor;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
 import okhttp3.OkHttpClient;
 
+
+
+/*Class fungsi untuk remote API ke server*/
 public class RemoteService {
 
     private ResponseInterceptor refreshTokenInterceptor;

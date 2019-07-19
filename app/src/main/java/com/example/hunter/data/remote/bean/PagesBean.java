@@ -2,6 +2,8 @@ package com.example.hunter.data.remote.bean;
 
 import com.google.gson.annotations.SerializedName;
 
+
+/*variable balkan dari response pages api*/
 public class PagesBean {
 
 

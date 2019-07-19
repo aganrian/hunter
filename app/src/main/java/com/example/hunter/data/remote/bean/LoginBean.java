@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo;
 
 import com.google.gson.annotations.SerializedName;
 
+/*variable dari response login api*/
 public class LoginBean  {
 
     @SerializedName("id_user")

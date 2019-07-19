@@ -5,6 +5,7 @@ import android.util.Log;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
+/*Class service untuk mendapat token dari firebase jika kedepannya di pasang push notif*/
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     private static final String TAG = MyFirebaseInstanceIDService.class.getSimpleName();

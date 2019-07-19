@@ -14,8 +14,9 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import dagger.android.support.DaggerAppCompatActivity;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*Main Acitivty yang mengatur seluruh fitur aplikasi di dalamnya*/
 public class MainActivity extends DaggerAppCompatActivity {
 
     public static String FROM = "FROM";

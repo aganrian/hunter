@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+/*Helper untuk membantu show dan hide keyboard*/
 public class KeyboardUtils {
 
     public static void show(View view) {

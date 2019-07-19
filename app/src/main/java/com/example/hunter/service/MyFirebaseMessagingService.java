@@ -10,7 +10,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
-
+/*class untuk menampilkan data dari yang di dapatkan dari push */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = MyFirebaseMessagingService.class.getSimpleName();

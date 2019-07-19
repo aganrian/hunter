@@ -3,6 +3,7 @@ package com.example.hunter.data.remote;
 import android.util.Log;
 
 import com.androidnetworking.common.Priority;
+
 import com.example.hunter.data.local.preference.PreferenceRepository;
 import com.example.hunter.data.remote.bean.AnnouncementBean;
 import com.example.hunter.data.remote.bean.BaseBean;
@@ -23,15 +24,14 @@ import com.example.hunter.utils.ImageUtils;
 import com.example.hunter.utils.constant.S;
 import com.google.gson.JsonObject;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
-
+import com.example.hunter.BuildConfig;
 import java.io.File;
 
 import javax.inject.Inject;
-
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
-import io.reactivex.Completable;
 import io.reactivex.Single;
 
+
+/*ini adalah collection dari api semua api di handle di sini*/
 public class RemoteDataSource implements RemoteRepository {
 
     private PreferenceRepository preferenceRepo;
@@ -41,6 +41,8 @@ public class RemoteDataSource implements RemoteRepository {
         this.preferenceRepo = preferenceRepo;
     }
 
+
+    /*ini adalah api untuk login */
     @Override
     public Single<LoginBean> postUserLogin(String email, String password) {
         return Rx2AndroidNetworking.post(BuildConfig.API_URL + "users/login?email={email}&password={password}")
@@ -50,7 +52,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .build()
                 .getObjectSingle(LoginBean.class);
     }
-
+    /*api untuk get data user*/
     @Override
     public Single<UserBean> getUser(Integer user_id) {
         return Rx2AndroidNetworking.get(BuildConfig.API_URL + "users?user_id={user_id}")
@@ -60,6 +62,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(UserBean.class);
     }
 
+    /*api untuk register user baru*/
     @Override
     public Single<RegisterBean> postUserRegister(String email, String password,String nama_lengkap) {
         return Rx2AndroidNetworking.post(BuildConfig.API_URL + "users?email={email}&password={password}&nama_lengkap={nama_lengkap}")
@@ -71,6 +74,8 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(RegisterBean.class);
     }
 
+
+    /*api untuk resend otp*/
     @Override
     public Single<BaseBean> resendOtp(Integer userId) {
         return Rx2AndroidNetworking.post(BuildConfig.API_URL + "users/otpResend?user_id={user_id}")
@@ -80,6 +85,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(BaseBean.class);
     }
 
+    /*api untuk kirim otp*/
     @Override
     public Single<BaseBean> sendOtp(Integer userId, String otp) {
         return Rx2AndroidNetworking.post(BuildConfig.API_URL + "users/otp?user_id={user_id}&otp={otp}")
@@ -90,6 +96,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(BaseBean.class);
     }
 
+    /*api untuk get list daftar product*/
     @Override
     public Single<ProductBean> getListProduct() {
         return Rx2AndroidNetworking.get(BuildConfig.API_URL + "products?")
@@ -98,6 +105,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(ProductBean.class);
     }
 
+    /*untuk report history user yang melakukan scan ocr / input manual atau yang di sebut penanganan*/
     @Override
     public Single<Historyreportbean> getHistoryReport(Integer userId) {
         return Rx2AndroidNetworking.get(BuildConfig.API_URL + "users/reportHistory?user_id={user_id}")
@@ -107,6 +115,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(Historyreportbean.class);
     }
 
+    /*untuk history reddem setiap produk yanng di lakukan user*/
     @Override
     public Single<HistoryRedeembean> getHistoryReedem(Integer userId) {
         return Rx2AndroidNetworking.get(BuildConfig.API_URL + "users/redeemHistory?user_id={user_id}")
@@ -116,6 +125,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(HistoryRedeembean.class);
     }
 
+    /*untuk API list announcemet */
     @Override
     public Single<AnnouncementBean> getListAnnouncement() {
         return Rx2AndroidNetworking.get(BuildConfig.API_URL + "announcements?")
@@ -123,7 +133,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .build()
                 .getObjectSingle(AnnouncementBean.class);
     }
-
+    /*untu API reset Password*/
     @Override
     public Single<ResetPasswordBean> postResetPassword(String email) {
         return Rx2AndroidNetworking.post(BuildConfig.API_URL + "users/resetPassword?email={email}")
@@ -132,7 +142,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .build()
                 .getObjectSingle(ResetPasswordBean.class);
     }
-
+    /*untuk API sent otp namun keperluan lupa password*/
     @Override
     public Single<BaseBean> sendOtpForgot(Integer userId, String otp) {
         return Rx2AndroidNetworking.post(BuildConfig.API_URL + "users/otpResetPassword?user_id={user_id}&otp={otp}")
@@ -143,6 +153,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(BaseBean.class);
     }
 
+    /*API untuk change password*/
     @Override
     public Single<BaseBean> changePassword(String userId, String password) {
         return Rx2AndroidNetworking.patch(BuildConfig.API_URL + "users?user_id={user_id}&password={password}")
@@ -152,7 +163,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .build()
                 .getObjectSingle(BaseBean.class);
     }
-
+    /*APi untuk edit user*/
     @Override
     public Single<EditUserBean> editUser(File imageFile, File fileKtp, JsonObject jsonObject) {
         if (imageFile != null) {
@@ -172,6 +183,8 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(EditUserBean.class);
     }
 
+
+    /*API untuk Upload OCR */
     @Override
     public Single<OcrBean> uploadOcr(File file,Integer user_id) {
         return Rx2AndroidNetworking.upload(BuildConfig.API_URL + "vehicles/ocr?user_id={user_id}")
@@ -182,6 +195,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(OcrBean.class);
     }
 
+    /*API untuk vehicle report saat tekan ok*/
     @Override
     public Single<VehicleReportBean> vehilceReport(Integer userId, Integer vehicle_id,String no_polisi,
                                                    File file, String latitude,String longitude) {
@@ -209,6 +223,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(VehicleReportBean.class);
     }
 
+    /*API untuk Hit Edit Handler*/
     @Override
     public Single<VehicleReportBean> vehilceEditHandler(Integer userId, Integer vehicle_id) {
         return Rx2AndroidNetworking.post(BuildConfig.API_URL + "vehicles/editHandler?user_id={user_id}&vehicle_id={vehicle_id}")
@@ -219,6 +234,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(VehicleReportBean.class);
     }
 
+    /*Apinuntuk Reddeem product */
     @Override
     public Single<ResultRedeem> redeemProduct(Integer user_id, Integer product_id) {
         return Rx2AndroidNetworking.post(BuildConfig.API_URL + "products/redeem?product_id={product_id}&user_id={user_id}")
@@ -229,6 +245,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(ResultRedeem.class);
     }
 
+    /*APi untuk liat plat mobil secara manual*/
     @Override
     public Single<OcrBean> getVehilceByLicense(String license_number) {
         return Rx2AndroidNetworking.get(BuildConfig.API_URL + "vehicles/getByLicense?license_number={license_number}")
@@ -238,6 +255,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(OcrBean.class);
     }
 
+    /*Update Image untuk edit user*/
     @Override
     public Single<EditUserBean> updateImage(File image, String type,Integer user_id) {
         if (type.equalsIgnoreCase(S.PROFILE)) {
@@ -257,6 +275,7 @@ public class RemoteDataSource implements RemoteRepository {
         }
     }
 
+    /*Api untuk ajukan perpanjangan penanganan*/
     @Override
     public Single<BaseBean> ajukanPerpanjangan(Integer user_id, Integer vehicle_id) {
         return Rx2AndroidNetworking.post(BuildConfig.API_URL + "vehicles/requestExtendHandle?user_id={user_id}&vehicle_id={vehicle_id}")
@@ -267,6 +286,7 @@ public class RemoteDataSource implements RemoteRepository {
                 .getObjectSingle(BaseBean.class);
     }
 
+    /*APi List province saat get alamat */
     @Override
     public Single<ProvinceBean> listProvince(String type,Integer id) {
         if(type==null || type.equalsIgnoreCase("")){
@@ -302,6 +322,7 @@ public class RemoteDataSource implements RemoteRepository {
 
     }
 
+    /*APi Untuk cek halaman pages*/
     @Override
     public Single<PagesBean> pagesBeans(Integer id) {
         return Rx2AndroidNetworking.get(BuildConfig.API_URL + "pages?id={id}")

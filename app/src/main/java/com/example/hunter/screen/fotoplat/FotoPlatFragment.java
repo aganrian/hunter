@@ -31,7 +31,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import pl.aprilapps.easyphotopicker.DefaultCallback;
 import pl.aprilapps.easyphotopicker.EasyImage;
 import pub.devrel.easypermissions.AppSettingsDialog;
@@ -94,6 +94,7 @@ public class FotoPlatFragment extends BaseFragment implements FotoPlatContract.V
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 
+    /*logic ocr di temukan dari beberapa kondisi */
     @Override
     public void gotoSummary(String status, OcrBean.Data data) {
         Intent intent = null;
@@ -188,11 +189,13 @@ public class FotoPlatFragment extends BaseFragment implements FotoPlatContract.V
         mPresenterLogin.dropView();
     }
 
+    /*action kirim ocr*/
     @OnClick(R.id.btnKirim)
     public void kirim(){
         mPresenterLogin.kirimOcr(file);
     }
 
+    /*action kirim manual*/
     @OnClick(R.id.btnKirimManual)
     public void onKirimManual(){
         mPresenterLogin.kirimManual(edNoPolisiManual.getText().toString());

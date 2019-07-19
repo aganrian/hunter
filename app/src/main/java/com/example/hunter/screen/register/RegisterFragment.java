@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.hunter.base.BaseFragment;
 import com.example.hunter.custom.CustomDialog;
-import com.example.hunter.screen.login.LoginContract;
 import com.example.hunter.screen.otp.OtpActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -16,8 +14,10 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+
+/*class fragment*/
 public class RegisterFragment extends BaseFragment implements RegisterContract.View {
 
     @Inject
@@ -51,6 +51,7 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
         mPresenterRegister.takeView(this);
     }
 
+
     @Override
     public void setLoadingIndicator(boolean active) {
         progressBar.setVisibility(active ? View.VISIBLE : View.GONE);
@@ -79,6 +80,8 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
         });
     }
 
+
+    /*metode untuk memanggil class otp activity */
     @Override
     public void goToOtpActivity(Integer userId,String namaLengkap,String email) {
         Intent intent = new Intent(parentActivity(),OtpActivity.class);
@@ -89,9 +92,11 @@ public class RegisterFragment extends BaseFragment implements RegisterContract.V
         startActivity(intent);
     }
 
+
+    /*ketika tombol register dipanggil*/
     @OnClick(R.id.buttonRegister)
     public void doLogin(){
-        mPresenterRegister.doLogin(namaRegister.getText().toString(),emailRegister.getText().toString(),passRegister.getText().toString());
+        mPresenterRegister.doRegister(namaRegister.getText().toString(),emailRegister.getText().toString(),passRegister.getText().toString());
     }
 
     @Override

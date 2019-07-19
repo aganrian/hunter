@@ -2,6 +2,7 @@ package com.example.hunter.data.remote.bean;
 
 import com.google.gson.annotations.SerializedName;
 
+/*variable response dari reset password*/
 public class ResetPasswordBean {
 
     @SerializedName("id_user")

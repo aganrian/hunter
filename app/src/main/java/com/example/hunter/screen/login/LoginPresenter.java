@@ -16,12 +16,13 @@ import org.json.JSONObject;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
+/*presenter data untuk login*/
 public class LoginPresenter implements LoginContract.Presenter {
 
     private static final String TAG = LoginPresenter.class.getSimpleName();
@@ -59,6 +60,7 @@ public class LoginPresenter implements LoginContract.Presenter {
         compositeDisposable.clear();
     }
 
+    /*metode untuk melakukan pemanggilan API login*/
     @Override
     public void doLogin(String phone, String password) {
 
@@ -88,6 +90,7 @@ public class LoginPresenter implements LoginContract.Presenter {
                 .subscribe(reponse -> {
                     mView.setLoadingIndicator(false);
 
+                    /*ketika sukses login data di simpan user Dao*/
                         UserEntity userEntity = new UserEntity();
                         userEntity.setUserId(reponse.getId_user());
                         userEntity.setAlamat(reponse.getAlamat());
@@ -130,6 +133,7 @@ public class LoginPresenter implements LoginContract.Presenter {
                                         .subscribe()
                         );
 
+                        /*ketika user login makan akan ngecek ke Main activity*/
                         mView.gotoHomeActivity();
 
 

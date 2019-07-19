@@ -36,7 +36,7 @@ import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -308,13 +308,15 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
 
     private String flag;
 
+    /*saat penanganan ocr ketik YA*/
     @OnClick(R.id.btnKirim)
     public void onKirim(){
         flag = S.S_KIRIM_YA;
         gpsTracker = new GPSTracker(parentActivity());
         if(EasyPermissions.hasPermissions(parentActivity(), perms)){
             if(gpsTracker.canGetLocation()){
-                mPresenter.getVehicleReportWithHandler(vehicleId,noPolice,fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
+                mPresenter.getVehicleReportWithHandler(vehicleId,noPolice,
+                        fileImage,String.valueOf(gpsTracker.getLatitude()),String.valueOf(gpsTracker.getLongitude()));
             }else{
                 gpsTracker.showSettingsAlert();
             }
@@ -324,6 +326,7 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
     }
 
 
+    /*saat penanganan OCR kirim NO*/
     @OnClick(R.id.btnBatal)
     public void btnBtl(){
         flag = S.S_KIRIM_NO;
@@ -339,6 +342,7 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
         }
     }
 
+    /*saat tombol OK saja*/
     @OnClick(R.id.btnOke)
     public void btnOke(){
         flag = S.S_KIRIM_OK;
@@ -380,6 +384,7 @@ public class FotoPlatReportFragment extends BaseFragment implements FotoPlatRepo
         parentActivity().finish();
     }
 
+    /*ini ketika ubah nomor polisi di pilih set lagi datanya */
     @Override
     public void gotoSummary(String status, OcrBean.Data data) {
         Intent intent = null;

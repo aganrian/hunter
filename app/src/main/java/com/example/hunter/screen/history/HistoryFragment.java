@@ -33,8 +33,9 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import de.hdodenhof.circleimageview.CircleImageView;
-import id.oase.indonesia.oasebrdiepa.BuildConfig;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.BuildConfig;
+import com.example.hunter.R;
+
 
 public class HistoryFragment extends BaseFragment implements HistoryContract.View {
 

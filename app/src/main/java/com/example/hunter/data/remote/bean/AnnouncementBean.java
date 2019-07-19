@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/*Variable response dari announcement APi*/
 public class AnnouncementBean  {
 
     @SerializedName("data")

@@ -2,6 +2,7 @@ package com.example.hunter.data.remote.bean;
 
 import com.google.gson.annotations.SerializedName;
 
+/*variable balikan dari response ocr api*/
 public class OcrBean {
 
     @SerializedName("status")

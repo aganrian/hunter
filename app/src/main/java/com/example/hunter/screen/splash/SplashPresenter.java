@@ -41,6 +41,8 @@ public class SplashPresenter implements SplashContract.Presenter {
         mView = null;
     }
 
+
+    /*presenter check sudah pernah login atau belum*/
     @Override
     public void checkUserExisting(){
 

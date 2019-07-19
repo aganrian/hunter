@@ -2,6 +2,7 @@ package com.example.hunter.data.remote.bean;
 
 import com.google.gson.annotations.SerializedName;
 
+/*variable response dari vehicle report*/
 public class VehicleReportBean {
 
 

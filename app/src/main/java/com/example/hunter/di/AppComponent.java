@@ -14,6 +14,7 @@ import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 
+/*Initialitation App Componen dan Module dalam Aplikasi agar bisa di akses dari mana pun*/
 @Singleton
 @Component(modules = {
         ApplicationModule.class,

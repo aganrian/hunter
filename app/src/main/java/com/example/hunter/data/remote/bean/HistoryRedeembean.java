@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/*variable response dari history*/
 public class HistoryRedeembean {
 
     @SerializedName("data")

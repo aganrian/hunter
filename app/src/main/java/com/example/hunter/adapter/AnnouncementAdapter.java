@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hunter.R;
 import com.example.hunter.data.remote.bean.AnnouncementBean;
 import com.example.hunter.data.remote.bean.HistoryRedeembean;
 
@@ -19,8 +20,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import id.oase.indonesia.oasebrdiepa.R;
 
+/*adapter untuk menghandle list dari announcement / berita*/
 public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapter.ItemVH> {
 
     private List<AnnouncementBean.Data.Data2> productBeans;

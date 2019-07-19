@@ -21,6 +21,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.example.hunter.R;
 import com.example.hunter.utils.constant.I;
 import com.example.hunter.utils.glide.GlideApp;
 
@@ -32,9 +33,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import id.oase.indonesia.oasebrdiepa.R;
 import id.zelory.compressor.Compressor;
 
+/*Utilitas atau helper untuk membantu penanganan gambar*/
 public class ImageUtils {
 
     private ImageUtils() {

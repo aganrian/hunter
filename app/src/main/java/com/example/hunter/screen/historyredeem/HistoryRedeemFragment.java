@@ -22,8 +22,9 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 
+/*fragment history redeem fragment list*/
 public class HistoryRedeemFragment extends BaseFragment implements HistoryRedeemContract.View {
 
     @Inject

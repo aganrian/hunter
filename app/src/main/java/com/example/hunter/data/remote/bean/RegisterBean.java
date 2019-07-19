@@ -2,6 +2,7 @@ package com.example.hunter.data.remote.bean;
 
 import com.google.gson.annotations.SerializedName;
 
+/*variable response balikan dari register aplikasi*/
 public class RegisterBean {
 
     @SerializedName("status")

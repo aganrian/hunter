@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -59,8 +59,9 @@ public class RegisterPresenter implements RegisterContract.Presenter {
         compositeDisposable.clear();
     }
 
+    /*metode yang di daftarkan di register contract dan akan melakukan pemanggilan ke register API */
     @Override
-    public void doLogin(String nama,String email, String password) {
+    public void doRegister(String nama, String email, String password) {
 
         if (mView == null) {
             return;
@@ -87,6 +88,7 @@ public class RegisterPresenter implements RegisterContract.Presenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(reponse -> {
                     mView.setLoadingIndicator(false);
+                    /*ketika berhasil akan memanggil register api maka akan memanggil view untuk ke otp*/
                         mView.goToOtpActivity(reponse.getData().getId_user(),reponse.getData().getNama_lengkap()
                                 ,reponse.getData().getEmail());
                 }, error -> {

@@ -25,7 +25,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -68,6 +68,7 @@ public class AlamatPresenter implements AlamatContract.Presenter {
         compositeDisposable.clear();
     }
 
+    /*presenter data untuk ambil dari sql lite*/
     @Override
     public void getAlamat() {
         if(mView==null){
@@ -91,7 +92,7 @@ public class AlamatPresenter implements AlamatContract.Presenter {
 
     }
 
-
+    /*get provinci dari APi*/
     @Override
     public void getProvinsi() {
         if(mView==null){
@@ -119,6 +120,7 @@ public class AlamatPresenter implements AlamatContract.Presenter {
         );
     }
 
+    /*get kabupaten dari api*/
     @Override
     public void getKabupaten(Integer provinceId) {
         if(mView==null){
@@ -146,6 +148,7 @@ public class AlamatPresenter implements AlamatContract.Presenter {
         );
     }
 
+    /*get kecamatan dari API*/
     @Override
     public void getDistrict(Integer regencyId) {
         if(mView==null){
@@ -173,6 +176,7 @@ public class AlamatPresenter implements AlamatContract.Presenter {
         );
     }
 
+    /*get kelurahan dari API*/
     @Override
     public void getVillage(Integer districtId) {
         if(mView==null){
@@ -200,6 +204,7 @@ public class AlamatPresenter implements AlamatContract.Presenter {
         );
     }
 
+    /*get kode pos dari API*/
     @Override
     public void getPostalCode(Integer villageId) {
         if(mView==null){
@@ -227,6 +232,7 @@ public class AlamatPresenter implements AlamatContract.Presenter {
         );
     }
 
+    /*Presenter update data dari API*/
     @Override
     public void simpanPerubahan(String province, Integer provinceId, String kabupaten, Integer kabupatenId, String kecamatan, Integer kecamatanId, String kelurahan, Integer kelurahanId, String postcode, Integer postcodeId, String alamat) {
         if(mView==null){

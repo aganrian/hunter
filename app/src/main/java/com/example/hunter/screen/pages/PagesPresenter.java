@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 import javax.inject.Inject;
 
-import id.oase.indonesia.oasebrdiepa.R;
+import com.example.hunter.R;
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -61,6 +61,7 @@ public class PagesPresenter implements PagesContract.Presenter {
         compositeDisposable.clear();
     }
 
+    /*memanggil data pages yang di tentukan*/
     @Override
     public void getContent(Integer id) {
         if(mView==null){

@@ -10,9 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ADMINSMMF on 2/12/2018.
+ * Created by Rian Ade Chandra on 2/12/2018.
  */
 
+/*Adapter untuk handle view pager adapter */
 public class ReviewContentPagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
